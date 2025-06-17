@@ -1,0 +1,21 @@
+@import url('/roboto.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  --bg-color: #0f172a;
+  --acc-color: #334155;
+  --txt-color: #64748b;
+  --heading: #cbd5e1;
+*/
+
+body {
+  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  background: #f8fafc;
+  color: #242424;
+}
+
+small {
+  left: calc(50% - 50px);
+}
