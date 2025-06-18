@@ -365,48 +365,100 @@ export const exercises = [
   ];
   
   
-  // Theory content data
-  export const theoryContent = {
-    topicVocabulary: [
-      { word: 'beat', type: 'v' }, { word: 'concert', type: 'n' }, { word: 'organise', type: 'v' },
-      { word: 'board game', type: 'n phr' }, { word: 'defeat', type: 'v, n' }, { word: 'pleasure', type: 'n' },
-      { word: 'captain', type: 'n' }, { word: 'entertaining', type: 'adj' }, { word: 'referee', type: 'n' },
-      { word: 'challenge', type: 'v, n' }, { word: 'folk music', type: 'n phr' }, { word: 'rhythm', type: 'n' },
-      { word: 'champion', type: 'n' }, { word: 'group', type: 'n' }, { word: 'risk', type: 'v, n' },
-      { word: 'cheat', type: 'v' }, { word: 'gym', type: 'n' }, { word: 'score', type: 'v, n' },
-      { word: 'classical music', type: 'n phr' }, { word: 'have fun', type: 'v phr' }, { word: 'support', type: 'v, n' },
-      { word: 'club', type: 'n' }, { word: 'interest', type: 'v, n' }, { word: 'team', type: 'n' },
-      { word: 'coach', type: 'n' }, { word: 'member', type: 'n' }, { word: 'train', type: 'v' },
-      { word: 'competition', type: 'n' }, { word: 'opponent', type: 'n' }, { word: 'video game', type: 'n phr' },
-    ],
-    phrasalVerbs: [
-      { verb: 'carry on', meaning: 'continue' },
-      { verb: 'eat out', meaning: 'eat at a restaurant' },
-      { verb: 'give up', meaning: 'stop doing sth you do regularly' },
-      { verb: 'join in', meaning: 'participate, take part' },
-      { verb: 'send off', meaning: 'make a player leave a game (eg, football)' },
-      { verb: 'take up', meaning: 'start (a hobby, sport, etc)' },
-      { verb: 'turn down', meaning: 'lower the volume of' },
-      { verb: 'turn up', meaning: 'increase the volume of' },
-    ],
-    prepositionalPhrases: [
-      'for a long time', 'for fun', 'in the middle (of)', 'in time (for)', 'on CD/DVD/video', 'on stage',
-    ],
-    wordFormation: [
-      { base: 'act', derived: ['action', '(in)active', 'actor'] },
-      { base: 'hero', derived: ['heroic', 'heroine'] },
-      { base: 'athlete', derived: ['athletic', 'athletics'] },
-      { base: 'music', derived: ['musical', 'musician'] },
-      { base: 'child', derived: ['children', 'childhood'] },
-      { base: 'play', derived: ['player', 'playful'] },
-      { base: 'collect', derived: ['collection', 'collector'] },
-      { base: 'sail', derived: ['sailing', 'sailor'] },
-      { base: 'entertain', derived: ['entertainment'] },
-      { base: 'sing', derived: ['sang', 'sung', 'song', 'singer', 'singing'] },
-    ],
-    wordPatterns: [
-      { category: 'adjectives', patterns: ['bored with', 'crazy about', 'good at', 'interested in', 'keen on', 'popular with'] },
-      { category: 'verbs', patterns: ['feel like', 'listen to', 'take part in'] },
-      { category: 'nouns', patterns: ['a book (by sb) about', 'a fan of', 'a game against'] },
-    ],
-  };
+  export const theoryContent = [
+    {
+      id: 'unit7_grammar',
+      title: 'Unit 7: Passives and Causatives',
+      sections: [
+        {
+          type: 'rules_with_examples',
+          title: 'The Passive',
+          content: {
+            intro: 'The passive voice is used for several reasons:',
+            items: [
+              { rule: "When we don't know who does/did something", example: "The car **was stolen** at approximately 1.30 am." },
+              { rule: "When it's obvious who does/did something", example: "**Having been introduced** in 1988, the Road Traffic Act regulates all vehicle use on UK roads." },
+              { rule: "When it's not important who does/did something", example: "The XL500 **was designed** with young families in mind." },
+              { rule: "To emphasise new information", example: "This type of submarine **was developed** during the Second World War by the Americans." },
+              { rule: "To avoid starting clauses with long expressions", example: "**We were surprised** by the number of people trying to leave the city." },
+              { rule: "To produce a formal style", example: "All passengers **are required** to present their ticket to the inspector." }
+            ]
+          }
+        },
+        {
+          type: 'table',
+          title: 'Impersonal Passive',
+          content: {
+            headers: ['Form', 'Example'],
+            rows: [
+              ['noun + passive verb + infinitive', '**Tourism is expected to become** a major part of the country\'s economy.'],
+              ['There + passive verb + infinitive', '**There are reported to have been** a record number of accidents on the roads.'],
+              ['It + passive verb + that clause', '**It is thought that** the new railway will provide employment opportunities.']
+            ]
+          }
+        },
+        {
+          type: 'rules_with_examples',
+          title: 'Direct and Indirect Object',
+          content: {
+            intro: 'Some verbs can be followed by both a direct and an indirect object. There are two possible passive forms.',
+            items: [
+              { rule: "Active sentence", example: "Michael gave the plane tickets to Jill." },
+              { rule: "With indirect object as subject", example: "**Jill was given** the plane tickets (by Michael)." },
+              { rule: "With direct object as subject", example: "**The plane tickets were given** to Jill (by Michael)." }
+            ],
+            notes: [
+              "With verbs like **explain** and **suggest**, you cannot use the indirect object as the subject. You must use a preposition. e.g., How to drive the train **was explained to** me. (NOT: *I was explained...*)"
+            ]
+          }
+        },
+        {
+          type: 'table',
+          title: 'Avoiding the Passive',
+          content: {
+            intro: "The passive is not normally used with continuous perfect tenses. Use these prepositional phrases instead.",
+            headers: ['Phrase', 'Correct Example'],
+            rows: [
+              ['in progress', "Preparations **will be in progress**..."],
+              ['in training', "I **will have been in training**..."],
+              ['on display', "Vintage cars **have been on display**..."],
+              ['under consideration', "The problem **had been under consideration**..."],
+              ['under construction', "The station **has been under construction**..."]
+            ]
+          }
+        },
+        {
+          type: 'nested_rules',
+          title: 'Causatives',
+          content: {
+            structures: [
+              {
+                form: "get/have sth done",
+                uses: [
+                  { use: "Actions we arrange for others to do", example: "Did you finally **get your bike fixed**?" },
+                  { use: "Things we experience (often negative)", example: "I heard that Susie **had her motorbike stolen**." }
+                ]
+              },
+              {
+                form: "get sb to do / have sb do",
+                uses: [
+                  { use: "Actions we make someone do", example: "Did you **get Alex to drive** you?" }
+                ]
+              },
+              {
+                form: "get/have sb doing",
+                uses: [
+                  { use: "Actions we make someone start doing", example: "We'll soon **have your car running** like new." }
+                ]
+              }
+            ],
+            notes: [
+                "In general, **get** is more informal than **have** in causative structures.",
+                "To show the agent, use **by**: Get the car looked at **by** a professional.",
+                "To refer to an instrument, use **with**: The engine is started **with** a special card."
+            ]
+          }
+        }
+      ]
+    }
+  ];
