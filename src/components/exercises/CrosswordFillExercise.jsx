@@ -7,20 +7,26 @@ const CrosswordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, on
   const userAnswer = userAnswers[qIndex] || '';
   const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
 
+  let inputClasses = "w-full p-4 border-2 rounded-xl text-black focus:outline-none focus:ring-2 transition-all duration-200 ";
+  
+  if (showFeedback) {
+    if (isCorrect) {
+      inputClasses += "success-state";
+    } else {
+      inputClasses += "error-state";
+    }
+  } else {
+    inputClasses += "border-gray-200 focus:border-gray-400 focus:ring-gray-200";
+  }
+
   return (
-    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-      <p className="text-gray-800 font-medium mb-2">
+    <div className="card">
+      <p className="text-black font-medium mb-4 text-lg leading-relaxed">
         {q.number}. {q.direction}: {q.clue}
       </p>
       <input
         type="text"
-        className={`w-full p-3 border rounded-md text-gray-800 focus:outline-none focus:ring-2 ${
-          showFeedback
-            ? (isCorrect
-              ? 'border-green-500 ring-green-200 bg-green-50'
-              : 'border-red-500 ring-red-200 bg-red-50')
-            : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-        }`}
+        className={inputClasses}
         value={userAnswer}
         onChange={(e) => onAnswerChange(qIndex, e.target.value)}
         disabled={showFeedback}

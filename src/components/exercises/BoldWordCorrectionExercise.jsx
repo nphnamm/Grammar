@@ -67,45 +67,45 @@ const BoldWordCorrectionExercise = ({ exercise, currentQuestionIndex, userAnswer
         const parts = text.split(new RegExp(`(${boldWord})`, 'gi')); // Global and case-insensitive
         return parts.map((part, index) => {
             if (part.toLowerCase() === boldWord.toLowerCase()) {
-                return <span key={index} className="font-bold text-blue-700">{part}</span>;
+                return <span key={index} className="font-bold text-black bg-gray-100 px-2 py-1 rounded-lg border border-gray-200">{part}</span>;
             }
             return part;
         });
     };
 
     return (
-        <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
-            <p className="text-gray-800 font-medium mb-3">
+        <div className="card">
+            <p className="text-black font-medium mb-4 text-lg leading-relaxed">
                 {q.number}. {renderTextWithBold(q.text, q.boldWord)}
             </p>
 
             {!showFeedback && ( // Show buttons/input based on internal state if no feedback
                 <>
                     {!isInputMode && ( // Show Correct/Wrong buttons
-                        <div className="flex space-x-4 mt-4">
+                        <div className="flex space-x-4 mt-6">
                             <button
                                 onClick={handleCorrectClick}
-                                className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+                                className="btn-primary flex-1"
                                 disabled={showFeedback} // Disabled if feedback is active
                             >
-                                Correct
+                                ✓ Correct
                             </button>
                             <button
                                 onClick={handleWrongClick}
-                                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+                                className="btn-secondary flex-1"
                                 disabled={showFeedback} // Disabled if feedback is active
                             >
-                                Wrong
+                                ✗ Wrong
                             </button>
                         </div>
                     )}
 
                     {isInputMode && ( // Show input field
-                        <div className="mt-4">
+                        <div className="mt-6">
                             <input
                                 ref={inputRef} // Attach ref here
                                 type="text"
-                                className="w-full p-3 border rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:border-blue-500 focus:ring-blue-200"
+                                className="input-modern"
                                 value={localUserAnswer}
                                 onChange={(e) => setLocalUserAnswer(e.target.value)}
                                 onBlur={handleInputConfirm} // Update parent state on blur
@@ -118,17 +118,18 @@ const BoldWordCorrectionExercise = ({ exercise, currentQuestionIndex, userAnswer
                                 aria-label={`Answer for question ${q.number}`}
                                 disabled={showFeedback} // Should also be disabled when feedback is shown
                             />
-                            <p className="text-sm text-gray-500 mt-1">Press Enter or click outside to confirm your typed word.</p>
+                            <p className="text-sm text-gray-500 mt-2">Press Enter or click outside to confirm your answer.</p>
                         </div>
                     )}
                 </>
             )}
 
             {showFeedback && ( // Show user's choice when feedback is active
-                <div className="mt-4 p-3 rounded-lg bg-gray-100 text-gray-700">
-                    Your choice: <span className="font-semibold">
+                <div className="mt-6 p-4 rounded-xl bg-gray-50 text-black border border-gray-200">
+                    <p className="font-medium">Your answer:</p>
+                    <p className="font-semibold mt-1">
                       {userAnswers[qIndex] === '_IS_CORRECT_' ? '(Bold word is correct)' : (userAnswers[qIndex] || 'N/A')}
-                    </span>
+                    </p>
                 </div>
             )}
         </div>

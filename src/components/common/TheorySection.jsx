@@ -78,19 +78,19 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
       case 'rules_with_examples':
         return (
             <div>
-              {content.intro && <p className="mb-4 text-base-black">{content.intro}</p>}
-              <ul className="space-y-3 text-base-black">
+              {content.intro && <p className="mb-6 text-black text-lg leading-relaxed">{content.intro}</p>}
+              <ul className="space-y-4 text-black">
                 {content?.items?.map((item, index) => (
-                  <li key={index} className="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <p><span className="font-semibold">{item.rule}:</span> <span dangerouslySetInnerHTML={renderHTML(item.example)} /></p>
+                  <li key={index} className="p-4 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-soft transition-all duration-200">
+                      <p className="leading-relaxed"><span className="font-semibold text-gray-900">{item.rule}:</span> <span dangerouslySetInnerHTML={renderHTML(item.example)} /></p>
                   </li>
                 ))}
               </ul>
               {content.notes && (
-                  <div className="mt-4 p-3 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800">
-                      <p className="font-bold">Watch out!</p>
+                  <div className="mt-6 p-4 bg-error-50 border-l-4 border-error-400 rounded-xl">
+                      <p className="font-bold text-error-800 mb-2">⚠️ Watch out!</p>
                       {content?.notes?.map((note, noteIndex) => (
-                          <p key={noteIndex} className="mt-1" dangerouslySetInnerHTML={renderHTML(note)} />
+                          <p key={noteIndex} className="mt-1 text-error-700 leading-relaxed" dangerouslySetInnerHTML={renderHTML(note)} />
                       ))}
                   </div>
               )}
@@ -101,22 +101,22 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
         return (
             <div>
                 {content?.structures?.map((structure, structIndex) => (
-                    <div key={structIndex} className="mb-4">
-                        <h5 className="font-bold text-lg text-base-black" dangerouslySetInnerHTML={renderHTML(structure.form)} />
-                        <ul className="list-disc list-inside ml-4 mt-2 space-y-2 text-base-black">
+                    <div key={structIndex} className="mb-6">
+                        <h5 className="font-bold text-lg text-black mb-3" dangerouslySetInnerHTML={renderHTML(structure.form)} />
+                        <ul className="list-disc list-inside ml-4 mt-3 space-y-2 text-black">
                             {structure?.uses?.map((useItem, useIndex) => (
-                                <li key={useIndex}>
-                                    <span className="font-medium">{useItem.use}:</span> <span dangerouslySetInnerHTML={renderHTML(useItem.example)} />
+                                <li key={useIndex} className="leading-relaxed">
+                                    <span className="font-medium text-gray-900">{useItem.use}:</span> <span dangerouslySetInnerHTML={renderHTML(useItem.example)} />
                                 </li>
                             ))}
                         </ul>
                     </div>
                 ))}
                 {content.notes && (
-                  <div className="mt-4 p-3 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800">
-                      <p className="font-bold">Watch out!</p>
+                  <div className="mt-6 p-4 bg-error-50 border-l-4 border-error-400 rounded-xl">
+                      <p className="font-bold text-error-800 mb-2">⚠️ Watch out!</p>
                       {content?.notes?.map((note, noteIndex) => (
-                          <p key={noteIndex} className="mt-1" dangerouslySetInnerHTML={renderHTML(note)} />
+                          <p key={noteIndex} className="mt-1 text-error-700 leading-relaxed" dangerouslySetInnerHTML={renderHTML(note)} />
                       ))}
                   </div>
               )}
@@ -129,8 +129,8 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
   };
 
   return (
-    <div className="bg-brand-blue p-8 rounded-2xl border-2 border-base-black shadow-lg font-sans">
-      <h3 className="text-3xl font-extrabold text-base-black mb-6 font-sans">{topicContent.title}</h3>
+    <div className="card">
+      <h3 className="text-3xl font-bold text-black mb-8">{topicContent.title}</h3>
 
       {/* Dynamically render all sections */}
       {topicContent?.sections?.map((section, index) => renderSection(section, index))}

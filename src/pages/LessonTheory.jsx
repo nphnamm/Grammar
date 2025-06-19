@@ -8,7 +8,7 @@ function LessonTheory() {
 
   if (!lesson) {
     return (
-      <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
+      <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
         <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-8 sm:p-10">
           <h1 className="text-4xl font-extrabold text-base-black mb-6 text-center font-sans">
             Lesson Not Found
@@ -145,7 +145,7 @@ function LessonTheory() {
   };
 
   return (
-    <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
+    <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
       <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-8 sm:p-10">
         <div className="flex justify-between items-center mb-8">
           <Link

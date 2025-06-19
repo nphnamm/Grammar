@@ -11,17 +11,23 @@ const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFee
         const correctEntry = exercise.correctAnswers.find(item => item.index === qIndex);
         const isCorrect = correctEntry && userAnswer.toLowerCase().trim() === correctEntry.word.toLowerCase().trim();
 
+        let inputClasses = "inline-block w-32 px-3 py-2 mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 ";
+        
+        if (showFeedback) {
+          if (isCorrect) {
+            inputClasses += "success-state";
+          } else {
+            inputClasses += "error-state";
+          }
+        } else {
+          inputClasses += "border-gray-300 focus:border-gray-400 focus:ring-gray-200";
+        }
+
         elements.push(
           <input
             key={`blank-${qIndex}`}
             type="text"
-            className={`inline-block w-32 px-2 py-1 mx-1 border-b-2 text-gray-800 focus:outline-none ${
-              showFeedback
-                ? (isCorrect
-                  ? 'border-green-500 bg-green-50'
-                  : 'border-red-500 bg-red-50')
-                : 'border-gray-300 focus:border-blue-500'
-            }`}
+            className={inputClasses}
             value={userAnswer}
             onChange={(e) => onAnswerChange(qIndex, e.target.value)}
             placeholder={`(${qIndex + 1})`}
@@ -35,10 +41,15 @@ const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFee
   };
 
   return (
-    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 text-lg leading-relaxed">
-      <p className="mb-4 font-bold text-gray-800">Word Bank: {exercise.wordBank.join(', ')}</p>
-      <div className="bg-white p-4 rounded-lg shadow-inner">
-        {renderTextWithBlanks()}
+    <div className="card">
+      <div className="mb-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <p className="font-semibold text-black mb-2">Word Bank:</p>
+        <p className="text-gray-700">{exercise.wordBank.join(', ')}</p>
+      </div>
+      <div className="bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
+        <div className="text-lg leading-relaxed text-black">
+          {renderTextWithBlanks()}
+        </div>
       </div>
     </div>
   );

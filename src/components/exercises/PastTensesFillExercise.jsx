@@ -12,19 +12,29 @@ const PastTensesFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
 
   const parts = q.text.split(/ ?\(.+?\) ?/g); // Split by (verb) placeholders
 
+  const getInputClasses = (isCorrect) => {
+    let classes = "inline-block w-32 px-4 py-3 mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 ";
+    
+    if (showFeedback) {
+      if (isCorrect) {
+        classes += "success-state";
+      } else {
+        classes += "error-state";
+      }
+    } else {
+      classes += "border-gray-300 focus:border-gray-400 focus:ring-gray-200";
+    }
+    
+    return classes;
+  };
+
   return (
-    <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
-      <p className="text-gray-800 font-medium mb-3">
+    <div className="card">
+      <p className="text-black font-medium mb-4 text-lg leading-relaxed">
         {qIndex + 1}. {parts[0]}
         <input
           type="text"
-          className={`inline-block w-32 px-3 py-2 mx-2 border-b-2 text-gray-800 focus:outline-none focus:ring-2 ${
-            showFeedback
-              ? (isCorrect1
-                ? 'border-green-500 ring-green-200 bg-green-50'
-                : 'border-red-500 ring-red-200 bg-red-50')
-              : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-          }`}
+          className={getInputClasses(isCorrect1)}
           value={userAnswer1}
           onChange={(e) => onAnswerChange(`${qIndex}_1`, e.target.value)}
           disabled={showFeedback}
@@ -34,13 +44,7 @@ const PastTensesFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
         {parts[1]}
         <input
           type="text"
-          className={`inline-block w-32 px-3 py-2 mx-2 border-b-2 text-gray-800 focus:outline-none focus:ring-2 ${
-            showFeedback
-              ? (isCorrect2
-                ? 'border-green-500 ring-green-200 bg-green-50'
-                : 'border-red-500 ring-red-200 bg-red-50')
-              : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-          }`}
+          className={getInputClasses(isCorrect2)}
           value={userAnswer2}
           onChange={(e) => onAnswerChange(`${qIndex}_2`, e.target.value)}
           disabled={showFeedback}

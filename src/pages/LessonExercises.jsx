@@ -25,7 +25,7 @@ function LessonExercises() {
 
   if (!lesson) {
     return (
-      <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
+      <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
         <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-8 sm:p-10">
           <h1 className="text-4xl font-extrabold text-base-black mb-6 text-center font-sans">
             Lesson Not Found
@@ -185,9 +185,9 @@ function LessonExercises() {
         const userAnswer = (exerciseAnswers[qIndex] || '').toLowerCase().trim();
         let isCorrect = false;
         if (currentExercise.type === 'multiple_choice') {
-          isCorrect = userAnswer === q.correct.toLowerCase().trim();
+          isCorrect = userAnswer === q?.correct?.toLowerCase().trim();
         } else {
-          isCorrect = userAnswer === q.correct.toLowerCase().trim();
+          isCorrect = userAnswer === q?.correct?.toLowerCase().trim();
         }
         if (isCorrect) {
           correctCount++;
@@ -202,7 +202,7 @@ function LessonExercises() {
 
   if (!currentExercise && currentView === 'exercises') {
     return (
-      <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
+      <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
         <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-8 sm:p-10">
           <h1 className="text-4xl font-extrabold text-base-black mb-6 text-center font-sans">
             Exercise Not Found
@@ -219,7 +219,7 @@ function LessonExercises() {
   }
 
   return (
-    <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
+    <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
       <GradingModal
         score={score}
         show={showGradingModal && showFeedback && (currentView === 'exercises')}
@@ -417,7 +417,7 @@ function LessonExercises() {
                         </p>
                         <p className="text-sm">
                           Correct Answer: <span className="font-medium text-brand-green">
-                            {q.word}
+                            {q.word ? q.word : q.correct}
                           </span>
                         </p>
                         <p className="text-sm mt-1 bg-brand-blue/20 p-2 rounded">
@@ -436,9 +436,9 @@ function LessonExercises() {
                     let isCorrect = false;
                     
                     if (currentExercise.type === 'crossword_fill' || currentExercise.type === 'single_word_fill' || currentExercise.type === 'word_formation') {
-                      isCorrect = (userAnswer || '').toLowerCase().trim() === q.correct.toLowerCase().trim();
+                      isCorrect = (userAnswer || '')?.toLowerCase().trim() === q?.correct?.toLowerCase().trim();
                     } else if (currentExercise.type === 'multiple_choice') {
-                      isCorrect = userAnswer === q.correct;
+                      isCorrect = userAnswer === q?.correct;
                     } else if (currentExercise.type === 'past_tenses_fill') {
                       const userAnswer1 = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][`${qIndex}_1`]) || '';
                       const userAnswer2 = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][`${qIndex}_2`]) || '';
@@ -465,11 +465,11 @@ function LessonExercises() {
                               : (userAnswer === '_IS_CORRECT_' ? '(Bold word is correct)' : (userAnswer || '(No answer)'))}
                           </span>
                         </p>
-                        <p className="text-sm">
-                          Correct Answer(s): <span className="font-medium text-brand-green">
+                        <p className="text-sm ">
+                          Correct Answer(s): <span className="font-medium text-green-500">
                             {currentExercise.type === 'past_tenses_fill' ?
                               `(${q.correct1}, ${q.correct2})`
-                              : (q.isCorrectDefault ? q.boldWord : q.correctAnswer)}
+                              : (q.isCorrectDefault ? q.boldWord : q.correctAnswer ? q.correctAnswer : q.correct)}
                           </span>
                         </p>
                         <p className="text-sm mt-1 bg-brand-blue/20 p-2 rounded">

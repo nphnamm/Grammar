@@ -1,32 +1,39 @@
 import React from 'react';
 
 const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback }) => {
-  const q = exercise.questions[currentQuestionIndex];
+  const q = exercise?.questions[currentQuestionIndex];
   const qIndex = currentQuestionIndex;
 
   const userAnswer = userAnswers[qIndex] || '';
-  const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
+  const isCorrect = userAnswer?.toLowerCase().trim() === q?.correct?.toLowerCase().trim();
 
-  const parts = q.text.split('____________');
+  const parts = q?.text?.split('____________');
+  
+  let inputClasses = "inline-block w-48 px-4 py-3 mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 ";
+  
+  if (showFeedback) {
+    if (isCorrect) {
+      inputClasses += "success-state";
+    } else {
+      inputClasses += "error-state";
+    }
+  } else {
+    inputClasses += "border-gray-300 focus:border-gray-400 focus:ring-gray-200";
+  }
+  
   return (
-    <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
-      <p className="text-gray-800 font-medium mb-3">
+    <div className="card">
+      <p className="text-black font-medium mb-4 text-lg leading-relaxed">
         {qIndex + 1}. {parts[0]}
         <input
           type="text"
-          className={`inline-block w-48 px-3 py-2 mx-2 border-b-2 text-gray-800 focus:outline-none focus:ring-2 ${
-            showFeedback
-              ? (isCorrect
-                ? 'border-green-500 ring-green-200 bg-green-50'
-                : 'border-red-500 ring-red-200 bg-red-50')
-              : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-          }`}
+          className={inputClasses}  
           value={userAnswer}
           onChange={(e) => onAnswerChange(qIndex, e.target.value)}
           disabled={showFeedback}
           aria-label={`Answer for question ${qIndex + 1}`}
         />
-        {parts[1]} <span className="font-bold text-blue-700">({q.baseWord})</span>
+        {parts[1]} <span className="font-bold text-black bg-gray-100 px-2 py-1 rounded-lg border border-gray-200">({q.baseWord})</span>
       </p>
     </div>
   );
