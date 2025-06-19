@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFeedback }) => {
+const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFeedback, onSubmit }) => {
   const renderTextWithBlanks = () => {
     const elements = [];
     exercise.textSegments.forEach((segment, index) => {
@@ -33,6 +33,7 @@ const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFee
             placeholder={`(${qIndex + 1})`}
             disabled={showFeedback}
             aria-label={`Blank ${qIndex + 1}`}
+            onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
           />
         );
       }

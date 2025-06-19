@@ -204,49 +204,49 @@ export const exercises = [
       questions: [
         {
           number: 1,
-          text: 'The ambulance __________ (left) by the time the reporters __________ (get) to the scene of the accident.',
+          text: 'The ambulance  (left) by the time the reporters  (get) to the scene of the accident.',
           verb1: 'leave', verb2: 'get',
           correct1: 'had left', correct2: 'got',
           explanation: 'The ambulance **had left** (past perfect) before the reporters **got** (past simple) to the scene, indicating the leaving happened first.'
         },
         {
           number: 2,
-          text: 'Before I __________ (meet) Dr Christian, I __________ (see) a number of different specialists.',
+          text: 'Before I  (meet) Dr Christian, I  (see) a number of different specialists.',
           verb1: 'meet', verb2: 'see',
           correct1: 'met', correct2: 'had seen',
           explanation: 'I **had seen** (past perfect) many specialists before I **met** (past simple) Dr Christian, indicating the seeing happened over a period before meeting him.'
         },
         {
           number: 3,
-          text: 'It __________ (be) only the second time I __________ (ever / be) in a helicopter.',
+          text: 'It  (be) only the second time I  (ever / be) in a helicopter.',
           verb1: 'be', verb2: 'ever / be',
           correct1: 'was', correct2: 'had ever been',
           explanation: 'It **was** (past simple) the second time, referring to a specific past event. I **had ever been** (past perfect) in a helicopter before that point.'
         },
         {
           number: 4,
-          text: 'Up to the moment when Mr O\'Donnell __________ (say) "You\'re fired!", I __________ (have) no idea why he wanted to see me.',
+          text: 'Up to the moment when Mr O\'Donnell  (say) "You\'re fired!", I  (have) no idea why he wanted to see me.',
           verb1: 'say', verb2: 'have',
           correct1: 'said', correct2: 'had had',
           explanation: 'I **had had** (past perfect) no idea before he **said** (past simple) "You\'re fired!", showing the state of not knowing occurred before the saying.'
         },
         {
           number: 5,
-          text: 'When Tonya __________ (finish) eating, she __________ (ask) the waiter to bring the bill.',
+          text: 'When Tonya  (finish) eating, she  (ask) the waiter to bring the bill.',
           verb1: 'finish', verb2: 'ask',
           correct1: 'had finished', correct2: 'asked',
           explanation: 'Tonya **had finished** (past perfect) eating *before* she **asked** (past simple) the waiter. The finishing happened first.'
         },
         {
           number: 6,
-          text: 'Luckily, I __________ (just / reach) the end of my essay when the teacher __________ (tell) us all to put our pens down.',
+          text: 'Luckily, I  (just / reach) the end of my essay when the teacher  (tell) us all to put our pens down.',
           verb1: 'just / reach', verb2: 'tell',
           correct1: 'had just reached', correct2: 'told',
           explanation: 'I **had just reached** (past perfect with "just") the end before the teacher **told** (past simple) us. The reaching happened immediately before.'
         },
         {
           number: 7,
-          text: 'We __________ (do) everything we had to do by five, so we __________ (decide) to go out for a coffee.',
+          text: 'We  (do) everything we had to do by five, so we  (decide) to go out for a coffee.',
           verb1: 'do', verb2: 'decide',
           correct1: 'had done', correct2: 'decided',
           explanation: 'We **had done** (past perfect) everything *before* five, and then we **decided** (past simple) to go out.'
@@ -367,98 +367,73 @@ export const exercises = [
   
   export const theoryContent = [
     {
-      id: 'unit7_grammar',
-      title: 'Unit 7: Passives and Causatives',
+      id: 'lesson1_theory',
+      title: 'Sports and Entertainment Vocabulary',
       sections: [
         {
-          type: 'rules_with_examples',
-          title: 'The Passive',
+          type: 'vocabulary',
+          title: 'Sports Vocabulary',
           content: {
-            intro: 'The passive voice is used for several reasons:',
+            intro: 'Learn essential vocabulary for talking about sports and entertainment:',
             items: [
-              { rule: "When we don't know who does/did something", example: "The car **was stolen** at approximately 1.30 am." },
-              { rule: "When it's obvious who does/did something", example: "**Having been introduced** in 1988, the Road Traffic Act regulates all vehicle use on UK roads." },
-              { rule: "When it's not important who does/did something", example: "The XL500 **was designed** with young families in mind." },
-              { rule: "To emphasise new information", example: "This type of submarine **was developed** during the Second World War by the Americans." },
-              { rule: "To avoid starting clauses with long expressions", example: "**We were surprised** by the number of people trying to leave the city." },
-              { rule: "To produce a formal style", example: "All passengers **are required** to present their ticket to the inspector." }
+              { term: 'champion', definition: 'The winner of a competition' },
+              { term: 'coach', definition: 'A person who trains and instructs players in a sport' },
+              { term: 'referee', definition: 'An official who controls a game' },
+              { term: 'opponent', definition: 'Someone you compete against in a game' },
+              { term: 'team', definition: 'A group of players who play together' },
+              { term: 'member', definition: 'A person who belongs to a particular group or club' },
+              { term: 'captain', definition: 'The leader of a sports team' },
+              { term: 'gym', definition: 'A place with equipment for physical exercise' }
             ]
           }
         },
         {
-          type: 'table',
-          title: 'Impersonal Passive',
+          type: 'vocabulary',
+          title: 'Entertainment Vocabulary',
           content: {
-            headers: ['Form', 'Example'],
-            rows: [
-              ['noun + passive verb + infinitive', '**Tourism is expected to become** a major part of the country\'s economy.'],
-              ['There + passive verb + infinitive', '**There are reported to have been** a record number of accidents on the roads.'],
-              ['It + passive verb + that clause', '**It is thought that** the new railway will provide employment opportunities.']
-            ]
-          }
-        },
-        {
-          type: 'rules_with_examples',
-          title: 'Direct and Indirect Object',
-          content: {
-            intro: 'Some verbs can be followed by both a direct and an indirect object. There are two possible passive forms.',
+            intro: 'Vocabulary for music and entertainment:',
             items: [
-              { rule: "Active sentence", example: "Michael gave the plane tickets to Jill." },
-              { rule: "With indirect object as subject", example: "**Jill was given** the plane tickets (by Michael)." },
-              { rule: "With direct object as subject", example: "**The plane tickets were given** to Jill (by Michael)." }
-            ],
-            notes: [
-              "With verbs like **explain** and **suggest**, you cannot use the indirect object as the subject. You must use a preposition. e.g., How to drive the train **was explained to** me. (NOT: *I was explained...*)"
+              { term: 'concert', definition: 'A live musical performance' },
+              { term: 'musician', definition: 'A person who plays or composes music' },
+              { term: 'group', definition: 'Musicians who perform together' },
+              { term: 'folk music', definition: 'Traditional music from a particular region' },
+              { term: 'classical music', definition: 'Traditional, formal music' },
+              { term: 'actor', definition: 'A person who performs in plays, films, or television' },
+              { term: 'stage', definition: 'The performance area in a theater' }
             ]
           }
         },
         {
-          type: 'table',
-          title: 'Avoiding the Passive',
+          type: 'grammar',
+          title: 'Phrasal Verbs',
           content: {
-            intro: "The passive is not normally used with continuous perfect tenses. Use these prepositional phrases instead.",
-            headers: ['Phrase', 'Correct Example'],
-            rows: [
-              ['in progress', "Preparations **will be in progress**..."],
-              ['in training', "I **will have been in training**..."],
-              ['on display', "Vintage cars **have been on display**..."],
-              ['under consideration', "The problem **had been under consideration**..."],
-              ['under construction', "The station **has been under construction**..."]
+            intro: 'Common phrasal verbs used in sports and entertainment:',
+            items: [
+              { term: 'take up', definition: 'To start a sport or hobby' },
+              { term: 'turn down/up', definition: 'To lower/increase volume' },
+              { term: 'join in', definition: 'To participate in an activity' },
+              { term: 'send off', definition: 'To make a player leave the game' },
+              { term: 'carry on', definition: 'To continue doing something' },
+              { term: 'eat out', definition: 'To eat at a restaurant' },
+              { term: 'give up', definition: 'To stop doing something' }
             ]
           }
         },
         {
-          type: 'nested_rules',
-          title: 'Causatives',
+          type: 'grammar',
+          title: 'Prepositional Phrases',
           content: {
-            structures: [
-              {
-                form: "get/have sth done",
-                uses: [
-                  { use: "Actions we arrange for others to do", example: "Did you finally **get your bike fixed**?" },
-                  { use: "Things we experience (often negative)", example: "I heard that Susie **had her motorbike stolen**." }
-                ]
-              },
-              {
-                form: "get sb to do / have sb do",
-                uses: [
-                  { use: "Actions we make someone do", example: "Did you **get Alex to drive** you?" }
-                ]
-              },
-              {
-                form: "get/have sb doing",
-                uses: [
-                  { use: "Actions we make someone start doing", example: "We'll soon **have your car running** like new." }
-                ]
-              }
-            ],
-            notes: [
-                "In general, **get** is more informal than **have** in causative structures.",
-                "To show the agent, use **by**: Get the car looked at **by** a professional.",
-                "To refer to an instrument, use **with**: The engine is started **with** a special card."
+            intro: 'Common prepositional phrases:',
+            items: [
+              { term: 'for a long time', definition: 'Indicating duration' },
+              { term: 'on DVD', definition: 'Indicating the medium' },
+              { term: 'in time', definition: 'Arriving before the deadline' },
+              { term: 'on stage', definition: 'Referring to the performance area' },
+              { term: 'in the middle', definition: 'Indicating a central position' },
+              { term: 'for fun', definition: 'Indicating purpose or reason' }
             ]
           }
         }
       ]
-    }
+    },
   ];

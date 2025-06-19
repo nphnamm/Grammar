@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback }) => {
+const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback, onSubmit }) => {
   const q = exercise?.questions[currentQuestionIndex];
   const qIndex = currentQuestionIndex;
 
@@ -32,6 +32,7 @@ const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, on
           onChange={(e) => onAnswerChange(qIndex, e.target.value)}
           disabled={showFeedback}
           aria-label={`Answer for question ${qIndex + 1}`}
+          onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
         />
         {parts[1]} <span className="font-bold text-black bg-gray-100 px-2 py-1 rounded-lg border border-gray-200">({q.baseWord})</span>
       </p>

@@ -2,7 +2,7 @@ export const exercises = [
   {
     id: 'A7',
     type: 'bold_word_correction',
-    title: 'Grammar: Correcting Verb Forms',
+    title: 'A Grammar: Correcting Verb Forms',
     instructions: 'If the verb in bold is correct, click "Correct". If it is incorrect, click "Wrong" and type the correct verb form.',
     questions: [
       { number: 1, text: "Could you tell me where your passport **was been issued**?", boldWord: 'was been issued', correctAnswer: 'was issued', isCorrectDefault: false, explanation: "The past simple passive is formed with `was/were` + past participle. 'Been' is not needed here." },
@@ -22,20 +22,20 @@ export const exercises = [
   {
     id: 'B7',
     type: 'fill_blanks_bank',
-    title: 'Grammar: Completing with the Passive Form',
+    title: 'B Grammar: Completing with the Passive Form',
     instructions: 'Write a verb from the box in the correct passive form in each gap.',
     wordBank: ['allow', 'ask', 'find', 'give', 'know', 'light', 'make', 'meet', 'show', 'write'],
     textSegments: [
-      "The stolen items ____________  ",
-      "in the attic of an empty house last week. When the open-air cinema opens, the first film ____________(2) ",
-      "will be Vertigo. Questions ____________ (3)",
-      "in Parliament about the Minister's business interests. We're looking forward to ____________ (4) ",
-      "a guided tour of the whole factory. Just imagine that when these words ____________(5)",
-      "Europeans had not yet discovered America. Once the barbecue ____________(6)",
-      ", we'll be able to start cooking. Before ____________ (7)",
-      " to see the invention, I had to agree not to tell anyone. I would really like ____________ (8)",
-      "at the airport, if that's possible. It ____________ (9)",
-      " very clear to us that we weren't welcome. Gareth says he's always wanted ____________ (10) ",
+      "The stolen items (1)  ",
+      "in the attic of an empty house last week. When the open-air cinema opens, the first film (2) ",
+      "will be Vertigo. Questions  (3)",
+      "in Parliament about the Minister's business interests. We're looking forward to  (4) ",
+      "a guided tour of the whole factory. Just imagine that when these words (5)",
+      "Europeans had not yet discovered America. Once the barbecue (6)",
+      ", we'll be able to start cooking. Before  (7)",
+      " to see the invention, I had to agree not to tell anyone. I would really like  (8)",
+      "at the airport, if that's possible. It  (9)",
+      " very clear to us that we weren't welcome. Gareth says he's always wanted  (10) ",
       "as someone with a good sense of humour."
     ],
     correctAnswers: [
@@ -54,7 +54,7 @@ export const exercises = [
   {
     id: 'C7',
     type: 'multiple_choice',
-    title: 'Grammar: Impersonal Passive Structures',
+    title: 'C Grammar: Impersonal Passive Structures',
     questions: [
       { text: "1 Global warming is thought **to be caused / is caused** by pollution.", options: ['to be caused', 'is caused'], correct: 'to be caused', explanation: "The structure is 'is thought' + to-infinitive passive." },
       { text: "2 There **are to be estimated / are estimated** to be about 5,400 different species of mammals.", options: ['are to be estimated', 'are estimated'], correct: 'are estimated', explanation: "The structure is 'There are estimated' + to-infinitive." },
@@ -71,7 +71,7 @@ export const exercises = [
   {
     id: 'D7',
     type: 'bold_word_correction',
-    title: 'Grammar: Correcting Verb Forms in a Text',
+    title: 'D Grammar: Correcting Verb Forms in a Text',
     instructions: 'Each sentence contains one verb in the wrong form. Identify and correct it.',
     questions: [
       { number: 1, text: "Heathrow Airport... **has called** the world's busiest international airport...", boldWord: 'has called', correctAnswer: 'is called', isCorrectDefault: false, explanation: "To state a general fact or name, the present simple passive 'is called' is used." },
@@ -86,212 +86,151 @@ export const exercises = [
   {
     id: "E7",
     type: "word_formation",
-    title: "Complete the sentences describing each situation using the phrase given.",
+    title: "E Grammar: Complete the sentences describing each situation using the phrase given.",
     questions: [
       {
-        text: "1 I started training to be an accountant six months ago. I've got six more months to go, and then I have to take exams. (in training) \n By the time I take my exams, .",
-        correct: "I wSill have been in training for a year",
+        baseWord: "in training",
+        text: " I started training to be an accountant six months ago. I've got six more months to go, and then I have to take exams. \n By the time I take my exams, .",
+        correct: "I will have been in training for a year",
         explanation: "The future perfect continuous 'will have been in training' is used for an action that continues up to a future point. The total duration is one year (6 months + 6 months)."
       },
       {
         baseWord: "under consideration",
-        text: "2 The council ha ve been thinking for some time of redeveloping the city centre. (under consideration)\nThe redevelopment of the city centre __________.",
+        text: " The council ha ve been thinking for some time of redeveloping the city centre. \nThe redevelopment of the city centre (2) .",
         correct: "has been under consideration for some time",
         explanation: "'Under consideration' means being discussed. The present perfect 'has been' is used because the subject 'The redevelopment' is singular and the action started in the past and continues."
       },
       {
         baseWord: "in progress",
-        text: "3 They've been having discussions on the issue for over two weeks. (in progress)\nDiscussions on the issue __________.",
+        text: " They've been having discussions on the issue for over two weeks. \nDiscussions on the issue (3) .",
         correct: "have been in progress for over two weeks",
         explanation: "'In progress' means happening. The present perfect 'have been' is used because the subject 'Discussions' is plural and the action started in the past and continues."
       },
       {
         baseWord: "on display",
-        text: "4 This weekend, the local Art Society will be displaying their latest works at the library. (on display)\nThe local Art Society's latest works __________.",
+        text: " This weekend, the local Art Society will be displaying their latest works at the library. \nThe local Art Society's latest works (4) .",
         correct: "will be on display at the library this weekend",
         explanation: "'On display' means being shown publicly. The future simple 'will be' is used to describe the future event."
       },
       {
         basedWord: "under construction",
-        text: "5 George seems to have been putting his website together for a long time. (under construction)\nGeorge's website __________.",
+        text: " George seems to have been putting his website together for a long time. \nGeorge's website (5) .",
         correct: "seems to have been under construction for a long time",
         explanation: "'Under construction' means being built. The structure 'seems to have been' is maintained from the original sentence to convey the same meaning."
       }
     ]
   },
   {
-    id: "G7",
+    id: "F7",
     instructions: 'Complete each sentence using the noun in bold and an appropriate causative form of the verb in bold.',
-    type: "single_word_fill",
-    title: "Complete each sentence using the noun in bold and an appropriate causative form of the verb in bold.",
+    type: "word_formation",
+    title: "F Grammar: Complete each sentence using the noun in bold and an appropriate causative form of the verb in bold.",
     questions: [
       {
-        text: "1 If you don't understand, __________ it to you again after the lesson. (your teacher / explain)",
+        baseWord: "your teacher / explain",
+        text: " If you don't understand, ____________ it to you again after the lesson.",  
         correct: "have your teacher explain",
         explanation: "The causative 'have someone do something' is used to mean 'ask someone to do something'. For example, 'I'll have my assistant call you.'"
       },
       {
-        text: "2 I was a bit depressed, but watching my kitten play with a ball of wool soon __________ much better. (me / feel)",
+        baseWord: "me / feel",
+        text: " I was a bit depressed, but watching my kitten play with a ball of wool soon ____________ much better.",
         correct: "made me feel",
         explanation: "The causative 'make someone do something' is used to mean 'force or cause someone to do something'. The past tense 'made' is used to match the context."
       },
       {
-        text: "3 Don't bother redecorating yourself – __________ it. (a professional / do)",
+        baseWord: "a professional / do",
+        text: " Don't bother redecorating yourself – ____________ it.",
         correct: "have a professional do",
         explanation: "The causative 'have someone do something' is used to mean 'arrange for someone to do something'. An alternative is 'get a professional to do it'."
       },
       {
-        text: "4 __________ was so annoying because it meant I had to take the tube to work. (our car / steal)",
+        baseWord: "our car / steal",
+        text: " ____________ was so annoying because it meant I had to take the tube to work.",
         correct: "Having our car stolen",
         explanation: "The passive causative 'have something done' is used. Here, it's used as a gerund phrase ('Having...') to act as the subject of the sentence."
       },
       {
-        text: "5 You won't learn as much if you __________ you with your homework all the time. (your parents / help)",
+        baseWord: "your parents / help",
+        text: " You won't learn as much if you ____________ you with your homework all the time.",
         correct: "have your parents help",
         explanation: "The causative 'have someone do something' is used to mean 'allow or get someone to do something'. 'Let your parents help' would also be correct."
       },
       {
-        text: "6 The concert started quietly, but the band soon __________ to their hit songs. (us all / dance)",
+        baseWord: "us all / dance",
+        text: " The concert started quietly, but the band soon ____________ to their hit songs.",
         correct: "had us all dancing",
         explanation: "The causative 'have someone doing something' is used to describe the effect that someone or something has on another person. The past tense 'had' is used. 'Got us all dancing' is also a valid answer."
       },
       {
-        text: "7 Tell Gordon yourself! Don't try __________ your dirty work for you! (me / do)",
+        baseWord: "me / do",
+        text: " Tell Gordon yourself! Don't try ____________ your dirty work for you!",
         correct: "to get me to do",
         explanation: "The structure is 'try to do something'. The causative 'get someone to do something' means 'persuade someone to do something'."
       },
       {
-        text: "8 Have you thought about __________ as short as mine? (your hair / cut)",
+        baseWord: "your hair / cut",
+        text: " Have you thought about ____________ as short as mine?",
         correct: "having your hair cut",
         explanation: "The passive causative 'have something done' is used to mean arranging for someone to do something for you. After the preposition 'about', the gerund form 'having' is required."
       },
       {
-        text: "9 I __________ me how to juggle with five balls, but I still couldn't do it. (Karen / show)",
+        baseWord: "Karen / show",
+        text: " I ____________ me how to juggle with five balls, but I still couldn't do it.",
         correct: "had Karen show",
         explanation: "The causative 'have someone do something' is used to mean 'ask someone to do something'. The past tense 'had' is required. 'Got Karen to show' is also a correct alternative."
       },
       {
-        "text": "10 Have you heard about the problems caused by students __________ by companies on the Internet? (their essays / write)",
+        baseWord: "their essays / write",
+        text: " Have you heard about the problems caused by students ____________ by companies on the Internet?",
         "correct": "having their essays written",
         "explanation": "The passive causative 'have something done' is used. The gerund form 'having' is used to describe what the students are doing."
       }
     ]
   },
-  {
-    id: "G",
-    type: "word_formation",
-    title: "Complete each sentence using the noun in bold and an appropriate causative form of the verb in bold.",
-    questions: [
-      {
-        baseWord: "your teacher",
-        text: "1 If you don't understand, __________ it to you again after the lesson.",
-        correct: "have your teacher explain",
-        explanation: "The causative 'have someone do something' is used to mean 'ask someone to do something'. For example, 'I'll have my assistant call you.'"
-      },
-      {
-        baseWord: "(me / feel)",
-        text: "2 I was a bit depressed, but watching my kitten play with a ball of wool soon __________ much better.",
-        correct: "made me feel",
-        explanation: "The causative 'make someone do something' is used to mean 'force or cause someone to do something'. The past tense 'made' is used to match the context."
-      },
-      {
-        baseWord: "(a professional / do)",
-        text: "3 Don't bother redecorating yourself – __________ it.",
-        correct: "have a professional do",
-        explanation: "The causative 'have someone do something' is used to mean 'arrange for someone to do something'. An alternative is 'get a professional to do it'."
-      },
-      {
-        baseWord: "(our car / steal)",
-        text: "4 __________ was so annoying because it meant I had to take the tube to work. (our car / steal)",
-        correct: "Having our car stolen",
-        explanation: "The passive causative 'have something done' is used. Here, it's used as a gerund phrase ('Having...') to act as the subject of the sentence."
-      },
-      {
-        baseWord: "(your parents / help)",
-        text: "5 You won't learn as much if you __________ you with your homework all the time. (your parents / help)",
-        correct: "have your parents help",
-        explanation: "The causative 'have someone do something' is used to mean 'allow or get someone to do something'. 'Let your parents help' would also be correct."
-      },
-      {
-        baseWord: "(us all / dance)",
-        text: "6 The concert started quietly, but the band soon __________ to their hit songs. (us all / dance)",
-        correct: "had us all dancing",
-        explanation: "The causative 'have someone doing something' is used to describe the effect that someone or something has on another person. The past tense 'had' is used. 'Got us all dancing' is also a valid answer."
-      },
-      {
-        baseWord: "(me / do)",
-        text: "7 Tell Gordon yourself! Don't try __________ your dirty work for you! (me / do)",
-        correct: "to get me to do",
-        explanation: "The structure is 'try to do something'. The causative 'get someone to do something' means 'persuade someone to do something'."
-      },
-      {
-        baseWord: "(your hair / cut)",
-        text: "8 Have you thought about __________ as short as mine? (your hair / cut)",
-        correct: "having your hair cut",
-        explanation: "The passive causative 'have something done' is used to mean arranging for someone to do something for you. After the preposition 'about', the gerund form 'having' is required."
-      },
-      {
-        baseWord: "(Karen / show)",
-        text: "9 I __________ me how to juggle with five balls, but I still couldn't do it. (Karen / show)",
-        correct: "had Karen show",
-        explanation: "The causative 'have someone do something' is used to mean 'ask someone to do something'. The past tense 'had' is required. 'Got Karen to show' is also a correct alternative."
-      },
-      {
-        baseWord: "(their essays / write)",
-        text: "10 Have you heard about the problems caused by students __________ by companies on the Internet? (their essays / write)",
-        correct: "having their essays written",
-        explanation: "The passive causative 'have something done' is used. The gerund form 'having' is used to describe what the students are doing."
-      }
-    ]
-  },
+
   {
     id: "H",
-    type: "single_word_fill",
-    title: "Grammar transformation: Write the sentence using the given word.",
+    type: "word_formation",
+    title: "H Grammar: Write the sentence using the given word.",
     questions: [
       {
-        text: "1 They made me wait for over 20 minutes on the phone! (kept). I ______ for over 20 minutes on the phone!",
+        baseWord: "kept",
+        text: "1 They made me wait for over 20 minutes on the phone!. I ____________ for over 20 minutes on the phone!",
         correct: "They kept me waiting for over 20 minutes on the phone!",
         explanation: "‘Kept’ is followed by a noun/pronoun and an -ing form to describe continuing actions caused by someone."
       },
       {
-        baseWord: "(considered)",
         text: "2 Although people consider Ashley to be a star, she is always friendly towards everyone.",
         correct: "Despite being considered a star, Ashley is always friendly towards everyone.",
         explanation: "‘Despite’ is followed by a gerund or noun phrase; passive form ‘being considered’ fits here."
       },
       {
-        baseWord: "(be)",
         text: "3 We have had reports that the Prime Minister is making a surprise visit to Syria.",
         correct: "The Prime Minister is reported to be making a surprise visit to Syria.",
         explanation: "Use the passive reporting structure: ‘is reported to be’ + present participle."
       },
       {
-        baseWord: "(by)",
         text: "4 The manager provided the staff with extra training.",
         correct: "The staff were provided with extra training by the manager.",
         explanation: "Passive voice with ‘by’ to show the agent of the action."
       },
       {
-        baseWord: "(explaining)",
         text: "5 I think someone needs to explain this computer program to me.",
         correct: "I think I need this computer program explaining to me.",
         explanation: "Causative structure: ‘need something doing’ means it needs to be done."
       },
       {
-        baseWord: "(under)",
         text: "6 They have been building the new stadium for much longer than they originally estimated.",
         correct: "The new stadium is under construction for much longer than they originally estimated.",
         explanation: "‘Under construction’ is the standard phrase to describe ongoing building work."
       },
       {
-        baseWord: "(to)",
         text: "7 Do you know why they made Craig stay behind after the lesson?",
         correct: "Do you know why Craig was made to stay behind after the lesson?",
         explanation: "In the passive, ‘made’ is followed by ‘to’ + verb."
       },
       {
-        baseWord: "(have)",
         text: "8 Call Lionel and ask him to send the reports up to my office.",
         correct: "Call Lionel and have him send the reports up to my office.",
         explanation: "‘Have someone do something’ is a causative structure meaning to instruct or arrange for someone to do something."

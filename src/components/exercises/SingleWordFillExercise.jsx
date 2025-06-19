@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleWordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback }) => {
+const SingleWordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback, onSubmit }) => {
   const q = exercise.questions[currentQuestionIndex];
   const qIndex = currentQuestionIndex;
 
@@ -32,6 +32,7 @@ const SingleWordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
           onChange={(e) => onAnswerChange(qIndex, e.target.value)}
           disabled={showFeedback}
           aria-label={`Answer for question ${qIndex + 1}`}
+          onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
         />
         {parts[1]}
       </p>

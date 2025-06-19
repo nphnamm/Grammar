@@ -74,7 +74,6 @@ function LessonExercises() {
 
   const handleCloseGradingModal = () => {
     setShowGradingModal(false);
-    setCurrentView('exercise_selection');
   };
 
   const handleNextExerciseModal = () => {
@@ -265,6 +264,7 @@ function LessonExercises() {
                 userAnswers={userAnswers[currentExercise.id] || {}}
                 onAnswerChange={handleAnswerChange}
                 showFeedback={showFeedback}
+                onSubmit={handleSubmit}
               />
             ) : currentExercise?.type === 'past_tenses_fill' ? (
               <PastTensesFillExercise
@@ -273,6 +273,7 @@ function LessonExercises() {
                 userAnswers={userAnswers[currentExercise.id] || {}}
                 onAnswerChange={handleAnswerChange}
                 showFeedback={showFeedback}
+                onSubmit={handleSubmit}
               />
             ) : currentExercise?.type === 'bold_word_correction' ? (
               <BoldWordCorrectionExercise
@@ -291,6 +292,7 @@ function LessonExercises() {
                   userAnswers={userAnswers[currentExercise.id] || {}}
                   onAnswerChange={handleAnswerChange}
                   showFeedback={showFeedback}
+                  onSubmit={handleSubmit}
                 />
               ) : currentExercise?.type === 'multiple_choice' ? (
                 <MultipleChoiceExercise
@@ -299,6 +301,7 @@ function LessonExercises() {
                   userAnswers={userAnswers[currentExercise.id] || {}}
                   onAnswerChange={handleAnswerChange}
                   showFeedback={showFeedback}
+                  onSubmit={handleSubmit}
                 />
               ) : currentExercise?.type === 'single_word_fill' ? (
                 <SingleWordFillExercise
@@ -307,6 +310,7 @@ function LessonExercises() {
                   userAnswers={userAnswers[currentExercise.id] || {}}
                   onAnswerChange={handleAnswerChange}
                   showFeedback={showFeedback}
+                  onSubmit={handleSubmit}
                 />
               ) : (
                 <WordFormationExercise
@@ -315,6 +319,7 @@ function LessonExercises() {
                   userAnswers={userAnswers[currentExercise.id] || {}}
                   onAnswerChange={handleAnswerChange}
                   showFeedback={showFeedback}
+                  onSubmit={handleSubmit}
                 />
               )
             )}

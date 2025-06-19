@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CrosswordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback }) => {
+const CrosswordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback, onSubmit }) => {
   const q = exercise.questions[currentQuestionIndex];
   const qIndex = currentQuestionIndex;
 
@@ -31,6 +31,7 @@ const CrosswordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, on
         onChange={(e) => onAnswerChange(qIndex, e.target.value)}
         disabled={showFeedback}
         aria-label={`Answer for question ${q.number}`}
+        onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
       />
     </div>
   );

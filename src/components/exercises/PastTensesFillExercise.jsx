@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PastTensesFillExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback }) => {
+const PastTensesFillExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback, onSubmit }) => {
   const q = exercise.questions[currentQuestionIndex];
   const qIndex = currentQuestionIndex;
 
@@ -40,6 +40,7 @@ const PastTensesFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
           disabled={showFeedback}
           placeholder={`(${q.verb1})`}
           aria-label={`First answer for question ${qIndex + 1}`}
+          onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
         />
         {parts[1]}
         <input
@@ -50,6 +51,7 @@ const PastTensesFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
           disabled={showFeedback}
           placeholder={`(${q.verb2})`}
           aria-label={`Second answer for question ${qIndex + 1}`}
+          onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
         />
         {parts[2]}
       </p>
