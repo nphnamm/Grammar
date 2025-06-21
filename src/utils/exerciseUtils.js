@@ -16,7 +16,14 @@ export const calculateScore = (exercise, userAnswers) => {
     exercise.questions.forEach((q, qIndex) => {
       const userAnswer1 = (exerciseAnswers[`${qIndex}_1`] || '').toLowerCase().trim();
       const userAnswer2 = (exerciseAnswers[`${qIndex}_2`] || '').toLowerCase().trim();
-      if (userAnswer1 === q.correct1.toLowerCase().trim() && userAnswer2 === q.correct2.toLowerCase().trim()) {
+      const userAnswer3 = (exerciseAnswers[`${qIndex}_3`] || '').toLowerCase().trim();
+      
+      // Check if all required answers are correct
+      const isCorrect1 = userAnswer1 === q.correct1.toLowerCase().trim();
+      const isCorrect2 = userAnswer2 === q.correct2.toLowerCase().trim();
+      const isCorrect3 = q.correct3 ? userAnswer3 === q.correct3.toLowerCase().trim() : true;
+      
+      if (isCorrect1 && isCorrect2 && isCorrect3) {
         correctCount++;
       }
     });

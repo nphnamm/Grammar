@@ -18,8 +18,7 @@
   
   body {
     font-family: 'Inter', 'Roboto', ui-sans-serif, system-ui, sans-serif;
-    background: #FFFFFF;
-    color: #000000;
+    @apply bg-base-gray-50 text-base-black;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,11 +39,23 @@
   }
   
   .card {
-    @apply bg-white rounded-2xl shadow-soft border border-gray-100 p-6 transition-all duration-200 ease-in-out;
+    @apply bg-base-white rounded-2xl shadow-sm border border-base-gray-200/80 p-6;
+  }
+
+  .card-dark {
+    @apply bg-base-gray-900 text-base-white rounded-2xl shadow-lg border border-base-gray-700 p-6;
   }
   
+  .card-3d {
+    @apply border-2 border-base-black rounded-2xl shadow-outline;
+  }
+
+  .card-3d-hover {
+    @apply transition-all duration-200 ease-in-out hover:shadow-none hover:translate-x-1 hover:translate-y-1;
+  }
+
   .card-hover {
-    @apply hover:shadow-medium hover:-translate-y-1;
+    @apply transition-all duration-200 ease-in-out hover:shadow-md hover:-translate-y-1;
   }
   
   .input-modern {

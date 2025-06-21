@@ -1,5 +1,6 @@
 import { exercises as passiveExercises, theoryContent as passiveTheory } from './passive.js';
-import { exercises as exercises1, theoryContent as theoryContent } from './exercises-1.js';
+import { exercises as exercises1, theoryContent as theoryContent } from './exercise-1.js';
+import { exercises as exercises3, theoryContent as theoryContent3 } from './exercise-3.js';
 
 export const lessons = [
   {
@@ -17,6 +18,14 @@ export const lessons = [
     image: '/images/passive-causative.jpg',
     theory: passiveTheory[0], 
     exercises: passiveExercises
+  },
+  {
+    id: 'lesson3',
+    title: 'Movement and transport',
+    description: 'Vocabulary and grammar related to movement and transport.',
+    image: '/images/movement-transport.jpg',
+    theory: theoryContent3[0],
+    exercises: exercises3
   }
 ];
 

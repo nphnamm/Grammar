@@ -48,7 +48,7 @@ const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFee
         <p className="text-gray-700">{exercise.wordBank.join(', ')}</p>
       </div>
       <div className="bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
-        <div className="text-lg leading-relaxed text-black">
+        <div className="text-lg leading-loose text-black ">
           {renderTextWithBlanks()}
         </div>
       </div>

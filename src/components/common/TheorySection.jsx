@@ -1,12 +1,9 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 // Helper function to render HTML content from a string (e.g., for bold tags)
 // This is safe because we are controlling the source of the content.
-const renderHTML = (htmlString) => {
-  // Simple parser for **bold** markdown to <b>bold</b> HTML
-  const parsedHtml = htmlString.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-  return { __html: parsedHtml };
-};
+// (No longer needed, so remove renderHTML)
 
 const TheorySection = ({ topicContent, onStartExercises }) => {
   if (!topicContent) {
@@ -45,7 +42,7 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
         return (
           <ul className="list-disc list-inside space-y-2 text-base-black">
             {content?.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}><ReactMarkdown className="inline">{item}</ReactMarkdown></li>
             ))}
           </ul>
         );
@@ -53,7 +50,7 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
       case 'table':
         return (
           <div className="overflow-x-auto">
-            {content.intro && <p className="mb-3 text-base-black">{content.intro}</p>}
+            {content.intro && <p className="mb-3 text-base-black"><ReactMarkdown>{content.intro}</ReactMarkdown></p>}
             <table className="min-w-full bg-white border border-gray-300">
               <thead>
                 <tr className="bg-gray-100">
@@ -66,7 +63,9 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
                 {content?.rows?.map((row, rowIndex) => (
                   <tr key={rowIndex} className="hover:bg-gray-50">
                     {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className="py-2 px-4 border-b text-base-black" dangerouslySetInnerHTML={renderHTML(cell)} />
+                      <td key={cellIndex} className="py-2 px-4 border-b text-base-black">
+                        <ReactMarkdown>{cell}</ReactMarkdown>
+                      </td>
                     ))}
                   </tr>
                 ))}
@@ -78,11 +77,11 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
       case 'rules_with_examples':
         return (
             <div>
-              {content.intro && <p className="mb-6 text-black text-lg leading-relaxed">{content.intro}</p>}
+              {content.intro && <p className="mb-6 text-black text-lg leading-relaxed"><ReactMarkdown>{content.intro}</ReactMarkdown></p>}
               <ul className="space-y-4 text-black">
                 {content?.items?.map((item, index) => (
                   <li key={index} className="p-4 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-soft transition-all duration-200">
-                      <p className="leading-relaxed"><span className="font-semibold text-gray-900">{item.rule}:</span> <span dangerouslySetInnerHTML={renderHTML(item.example)} /></p>
+                      <p className="leading-relaxed"><ReactMarkdown className="font-semibold text-gray-900">{item.rule}:</ReactMarkdown> <ReactMarkdown className="inline">{item.example}</ReactMarkdown></p>
                   </li>
                 ))}
               </ul>
@@ -90,7 +89,7 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
                   <div className="mt-6 p-4 bg-error-50 border-l-4 border-error-400 rounded-xl">
                       <p className="font-bold text-error-800 mb-2">⚠️ Watch out!</p>
                       {content?.notes?.map((note, noteIndex) => (
-                          <p key={noteIndex} className="mt-1 text-error-700 leading-relaxed" dangerouslySetInnerHTML={renderHTML(note)} />
+                          <p key={noteIndex} className="mt-1 text-error-700 leading-relaxed"><ReactMarkdown>{note}</ReactMarkdown></p>
                       ))}
                   </div>
               )}
@@ -102,11 +101,11 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
             <div>
                 {content?.structures?.map((structure, structIndex) => (
                     <div key={structIndex} className="mb-6">
-                        <h5 className="font-bold text-lg text-black mb-3" dangerouslySetInnerHTML={renderHTML(structure.form)} />
+                        <h5 className="font-bold text-lg text-black mb-3"><ReactMarkdown>{structure.form}</ReactMarkdown></h5>
                         <ul className="list-disc list-inside ml-4 mt-3 space-y-2 text-black">
                             {structure?.uses?.map((useItem, useIndex) => (
                                 <li key={useIndex} className="leading-relaxed">
-                                    <span className="font-medium text-gray-900">{useItem.use}:</span> <span dangerouslySetInnerHTML={renderHTML(useItem.example)} />
+                                    <span className="font-medium text-gray-900">{useItem.use}:</span> <span><ReactMarkdown className="inline">{useItem.example}</ReactMarkdown></span>
                                 </li>
                             ))}
                         </ul>
@@ -116,7 +115,7 @@ const TheorySection = ({ topicContent, onStartExercises }) => {
                   <div className="mt-6 p-4 bg-error-50 border-l-4 border-error-400 rounded-xl">
                       <p className="font-bold text-error-800 mb-2">⚠️ Watch out!</p>
                       {content?.notes?.map((note, noteIndex) => (
-                          <p key={noteIndex} className="mt-1 text-error-700 leading-relaxed" dangerouslySetInnerHTML={renderHTML(note)} />
+                          <p key={noteIndex} className="mt-1 text-error-700 leading-relaxed"><ReactMarkdown>{note}</ReactMarkdown></p>
                       ))}
                   </div>
               )}

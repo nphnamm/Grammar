@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        mint: '#D1FAE5',      // A light green, like in "Total Earning"
+        peach: '#FFEDD5',     // A light orange, like in "Total Spending"
+        lavender: '#E0E7FF', // A light purple/blue, like in "Gold this month"
         brand: {
           primary: '#000000',
           secondary: '#171717',
@@ -13,18 +16,18 @@ module.exports = {
         },
         base: {
           white: '#FFFFFF',
-          black: '#000000',
+          black: '#1F2937', // A softer black for text
           gray: {
-            50: '#FAFAFA',
-            100: '#F5F5F5',
-            200: '#E5E5E5',
-            300: '#D4D4D4',
-            400: '#A3A3A3',
-            500: '#737373',
-            600: '#525252',
-            700: '#404040',
-            800: '#262626',
-            900: '#171717',
+            50: '#F9FAFB',  // A slightly cooler light gray for backgrounds
+            100: '#F3F4F6',
+            200: '#E5E7EB',
+            300: '#D1D5DB',
+            400: '#9CA3AF',
+            500: '#6B7281',
+            600: '#4B5563',
+            700: '#374151',
+            800: '#1F2937',
+            900: '#111827',
           }
         },
         success: {
@@ -64,6 +67,7 @@ module.exports = {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 10px -2px rgba(0, 0, 0, 0.05)',
+        'outline': '4px 4px 0 0 #1F2937',
       }
     },
   },

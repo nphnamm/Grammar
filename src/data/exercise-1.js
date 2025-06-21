@@ -204,70 +204,70 @@ export const exercises = [
       questions: [
         {
           number: 1,
-          text: 'The ambulance  (left) by the time the reporters  (get) to the scene of the accident.',
+          text: 'The ambulance (1) by the time the reporters (2) to the scene of the accident.',
           verb1: 'leave', verb2: 'get',
           correct1: 'had left', correct2: 'got',
           explanation: 'The ambulance **had left** (past perfect) before the reporters **got** (past simple) to the scene, indicating the leaving happened first.'
         },
         {
           number: 2,
-          text: 'Before I  (meet) Dr Christian, I  (see) a number of different specialists.',
+          text: 'Before I (1) Dr Christian, I (2) a number of different specialists.',
           verb1: 'meet', verb2: 'see',
           correct1: 'met', correct2: 'had seen',
           explanation: 'I **had seen** (past perfect) many specialists before I **met** (past simple) Dr Christian, indicating the seeing happened over a period before meeting him.'
         },
         {
           number: 3,
-          text: 'It  (be) only the second time I  (ever / be) in a helicopter.',
-          verb1: 'be', verb2: 'ever / be',
+          text: 'It (1) only the second time I (2) in a helicopter.',
+          verb1: 'be', verb2: 'be',
           correct1: 'was', correct2: 'had ever been',
           explanation: 'It **was** (past simple) the second time, referring to a specific past event. I **had ever been** (past perfect) in a helicopter before that point.'
         },
         {
           number: 4,
-          text: 'Up to the moment when Mr O\'Donnell  (say) "You\'re fired!", I  (have) no idea why he wanted to see me.',
+          text: 'Up to the moment when Mr O\'Donnell (1) "You\'re fired!", I (2) no idea why he wanted to see me.',
           verb1: 'say', verb2: 'have',
           correct1: 'said', correct2: 'had had',
           explanation: 'I **had had** (past perfect) no idea before he **said** (past simple) "You\'re fired!", showing the state of not knowing occurred before the saying.'
         },
         {
           number: 5,
-          text: 'When Tonya  (finish) eating, she  (ask) the waiter to bring the bill.',
+          text: 'When Tonya (1) eating, she (2) the waiter to bring the bill.',
           verb1: 'finish', verb2: 'ask',
           correct1: 'had finished', correct2: 'asked',
           explanation: 'Tonya **had finished** (past perfect) eating *before* she **asked** (past simple) the waiter. The finishing happened first.'
         },
         {
           number: 6,
-          text: 'Luckily, I  (just / reach) the end of my essay when the teacher  (tell) us all to put our pens down.',
-          verb1: 'just / reach', verb2: 'tell',
+          text: 'Luckily, I (1) the end of my essay when the teacher (2) us all to put our pens down.',
+          verb1: 'reach', verb2: 'tell',
           correct1: 'had just reached', correct2: 'told',
           explanation: 'I **had just reached** (past perfect with "just") the end before the teacher **told** (past simple) us. The reaching happened immediately before.'
         },
         {
           number: 7,
-          text: 'We  (do) everything we had to do by five, so we  (decide) to go out for a coffee.',
+          text: 'We (1) everything we had to do by five, so we (2) to go out for a coffee.',
           verb1: 'do', verb2: 'decide',
           correct1: 'had done', correct2: 'decided',
           explanation: 'We **had done** (past perfect) everything *before* five, and then we **decided** (past simple) to go out.'
         },
         {
           number: 8,
-          text: 'I __________ (want) Mrs Thomas\'s young son to touch my ornaments because I __________ (just / clean) them.',
-          verb1: 'want', verb2: 'just / clean',
+          text: 'I (1) Mrs Thomas\'s young son to touch my ornaments because I (2) them.',
+          verb1: 'want', verb2: 'clean',
           correct1: 'didn\'t want', correct2: 'had just cleaned',
           explanation: 'I **didn\'t want** (past simple, negative) him to touch them because I **had just cleaned** (past perfect with "just") them. The cleaning happened immediately prior.'
         },
         {
           number: 9,
-          text: 'My mum __________ (be) annoyed with me because I __________ (forget) to get milk when I was at the shop.',
+          text: 'My mum (1) annoyed with me because I (2) to get milk when I was at the shop.',
           verb1: 'be', verb2: 'forget',
           correct1: 'was', correct2: 'had forgotten',
           explanation: 'My mum **was** (past simple) annoyed because I **had forgotten** (past perfect) to get milk *before* that moment.'
         },
         {
           number: 10,
-          text: 'I __________ (get) Janine a book for her birthday, but she __________ (read) it before.',
+          text: 'I (1) Janine a book for her birthday, but she (2) it before.',
           verb1: 'get', verb2: 'read',
           correct1: 'got', correct2: 'had read',
           explanation: 'I **got** (past simple) her a book, but she **had read** (past perfect) it already *before* I got it for her.'
@@ -373,7 +373,7 @@ export const exercises = [
         {
           type: 'vocabulary',
           title: 'Sports Vocabulary',
-          content: {
+          content:{
             intro: 'Learn essential vocabulary for talking about sports and entertainment:',
             items: [
               { term: 'champion', definition: 'The winner of a competition' },

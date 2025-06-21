@@ -10,11 +10,13 @@ import WordFormationExercise from '../components/exercises/WordFormationExercise
 import PastTensesFillExercise from '../components/exercises/PastTensesFillExercise';
 import BoldWordCorrectionExercise from '../components/exercises/BoldWordCorrectionExercise';
 import GradingModal from '../components/common/GradingModal';
+import ReactMarkdown from 'react-markdown';
+import DragAndDropWordsExercise from '../components/exercises/DragAndDropWordsExercise';
 
 function LessonExercises() {
   const { lessonId } = useParams();
   const lesson = lessons.find(l => l.id === lessonId);
-  
+
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
@@ -178,6 +180,14 @@ function LessonExercises() {
           }
         }
       });
+    } else if (currentExercise.type === 'drag_and_drop_words') {
+      totalQuestions = currentExercise.questions?.length || 0;
+      currentExercise.questions?.forEach((q, qIndex) => {
+        const userAnswer = exerciseAnswers[qIndex] || [];
+        if (JSON.stringify(userAnswer) === JSON.stringify(q.correct_answer)) {
+          correctCount++;
+        }
+      });
     } else {
       totalQuestions = currentExercise.questions?.length || 0;
       currentExercise.questions?.forEach((q, qIndex) => {
@@ -217,6 +227,55 @@ function LessonExercises() {
     );
   }
 
+  const renderWordBank = (wordBank) => {
+    if (!wordBank) return null;
+    
+    if (Array.isArray(wordBank)) {
+      // Handle regular array wordBank
+      return (
+        <div className="bg-brand-blue/10 p-4 rounded-lg mb-4">
+          <div className="font-semibold mb-2">Word Bank:</div>
+          <div className="flex flex-wrap gap-2">
+            {wordBank.map((word, idx) => (
+              <span key={idx} className="bg-base-white px-3 py-1 rounded-lg border border-brand-blue text-sm">
+                {word}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+    } else if (wordBank.boxA && wordBank.boxB) {
+      // Handle split box wordBank
+      return (
+        <div className="bg-brand-blue/10 p-4 rounded-lg mb-4">
+          <div className="space-y-4">
+            <div>
+              <div className="font-semibold mb-2">Box A:</div>
+              <div className="flex flex-wrap gap-2">
+                {wordBank.boxA.map((word, idx) => (
+                  <span key={idx} className="bg-base-white px-3 py-1 rounded-lg border border-brand-blue text-sm">
+                    {word}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="font-semibold mb-2">Box B:</div>
+              <div className="flex flex-wrap gap-2">
+                {wordBank.boxB.map((word, idx) => (
+                  <span key={idx} className="bg-base-white px-3 py-1 rounded-lg border border-brand-blue text-sm">
+                    {word}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
       <GradingModal
@@ -234,12 +293,12 @@ function LessonExercises() {
           >
             ← Back to Lessons
           </Link>
-          <Link
-            to={`/lesson/${lessonId}/theory`}
+          <button
+            onClick={navigateToExerciseList}
             className="bg-brand-blue text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-blue/90"
           >
-            Study Theory
-          </Link>
+            Exercises List
+          </button>
         </div>
 
         <h1 className="text-4xl font-extrabold text-base-black mb-6 text-center font-sans">
@@ -253,6 +312,7 @@ function LessonExercises() {
             <h2 className="text-2xl font-semibold text-base-black mb-4 border-b pb-2">
               {currentExercise?.title}
             </h2>
+            {renderWordBank(currentExercise?.wordBank)}
             <p className="text-base-black mb-6 leading-relaxed">
               {currentExercise?.instructions}
             </p>
@@ -283,6 +343,14 @@ function LessonExercises() {
                 onAnswerChange={handleAnswerChange}
                 showFeedback={showFeedback}
                 onSubmit={handleSubmit}
+              />
+            ) : currentExercise?.type === 'drag_and_drop_words' ? (
+              <DragAndDropWordsExercise
+                exercise={currentExercise}
+                currentQuestionIndex={currentQuestionIndex}
+                userAnswers={userAnswers[currentExercise.id] || {}}
+                onAnswerChange={handleAnswerChange}
+                showFeedback={showFeedback}
               />
             ) : (
               currentExercise?.type === 'crossword_fill' ? (
@@ -325,14 +393,6 @@ function LessonExercises() {
             )}
 
             <div className="flex flex-col sm:flex-row justify-between mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
-              <button
-                onClick={handlePreviousQuestion}
-                className="flex-1 bg-brand-peach hover:bg-brand-peach/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-peach focus:ring-opacity-75"
-                disabled={currentQuestionIndex === 0 && currentExerciseIndex === 0 && !showFeedback}
-              >
-                Previous Question
-              </button>
-
               {currentExercise?.type !== 'fill_blanks_bank' && !showFeedback && (
                 <button
                   onClick={handleSubmit}
@@ -361,7 +421,7 @@ function LessonExercises() {
                   Next Question
                 </button>
               )}
-              
+
               {showFeedback && currentExercise?.type !== 'fill_blanks_bank' && currentExercise?.questions && currentQuestionIndex === currentExercise.questions.length - 1 && (
                 <button
                   onClick={handleNextExercise}
@@ -381,20 +441,6 @@ function LessonExercises() {
               )}
 
               <button
-                onClick={handlePreviousExercise}
-                className="flex-1 bg-base-white hover:bg-brand-blue/60 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75"
-                disabled={currentExerciseIndex === 0 && !showFeedback}
-              >
-                Previous Exercise
-              </button>
-              <button
-                onClick={handleNextExercise}
-                className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75"
-                disabled={currentExerciseIndex === exercises.length - 1 && currentExercise?.questions && currentQuestionIndex === currentExercise.questions.length - 1 && showFeedback}
-              >
-                Next Exercise
-              </button>
-              <button
                 onClick={navigateToExerciseList}
                 className="flex-1 bg-brand-blue hover:bg-brand-blue/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75"
               >
@@ -404,14 +450,23 @@ function LessonExercises() {
 
             {showFeedback && (
               <div className="mt-8 p-6 bg-brand-blue/10 border-l-4 border-brand-blue text-base-black rounded-lg shadow-inner">
+
                 <h3 className="text-xl font-bold mb-3">Explanation:</h3>
-                {currentExercise?.id === 'B1' ? (
+                {currentExercise?.type === 'fill_blanks_bank' ? (
                   currentExercise.correctAnswers?.map((q, qIndex) => {
                     const userAnswer = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][q.index]) || '';
                     const isCorrect = userAnswer.toLowerCase().trim() === q.word.toLowerCase().trim();
 
                     return (
                       <div key={qIndex} className="mb-4">
+                        <div className="text-sm mb-3">
+
+                          {
+                            isCorrect ? 'Correct ✅' : 'Wrong ❌'
+                          }
+
+
+                        </div>
                         <p className="font-semibold text-base-black">
                           Question {q.index + 1}:
                         </p>
@@ -426,7 +481,7 @@ function LessonExercises() {
                           </span>
                         </p>
                         <p className="text-sm mt-1 bg-brand-blue/20 p-2 rounded">
-                          <span className="font-medium">Why:</span> {q.explanation}
+                          <span className="font-bold text-brand-blue">Why:</span> {q.explanation}
                         </p>
                       </div>
                     );
@@ -435,11 +490,11 @@ function LessonExercises() {
                   (() => {
                     const q = currentExercise?.questions?.[currentQuestionIndex];
                     if (!q) return null;
-                    
+
                     const qIndex = currentQuestionIndex;
                     const userAnswer = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][qIndex]);
                     let isCorrect = false;
-                    
+
                     if (currentExercise.type === 'crossword_fill' || currentExercise.type === 'single_word_fill' || currentExercise.type === 'word_formation') {
                       isCorrect = (userAnswer || '')?.toLowerCase().trim() === q?.correct?.toLowerCase().trim();
                     } else if (currentExercise.type === 'multiple_choice') {
@@ -448,37 +503,53 @@ function LessonExercises() {
                       const userAnswer1 = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][`${qIndex}_1`]) || '';
                       const userAnswer2 = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][`${qIndex}_2`]) || '';
                       isCorrect = (userAnswer1.toLowerCase().trim() === q.correct1.toLowerCase().trim()) &&
-                                (userAnswer2.toLowerCase().trim() === q.correct2.toLowerCase().trim());
+                        (userAnswer2.toLowerCase().trim() === q.correct2.toLowerCase().trim());
                     } else if (currentExercise.type === 'bold_word_correction') {
                       if (userAnswer === '_IS_CORRECT_') {
                         isCorrect = q.isCorrectDefault;
                       } else {
                         isCorrect = (userAnswer || '').toLowerCase().trim() === q.correctAnswer.toLowerCase().trim();
                       }
+                    } else if (currentExercise.type === 'drag_and_drop_words') {
+                      const userAnswer = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][qIndex]) || [];
+                      isCorrect = JSON.stringify(userAnswer) === JSON.stringify(q.correct_answer);
                     }
 
                     return (
                       <div key={qIndex} className="mb-4">
-                        <p className="font-semibold text-base-black">
+                        {/* <p className="font-semibold text-base-black">
                           {q.number ? `${q.number}. ` : `${qIndex + 1}. `}
                           {q.text || q.clue || ''}
-                        </p>
+                        </p> */}
+                        <div className="text-sm mb-3">
+                          {
+                            isCorrect ? 'Correct ✅' : 'Wrong ❌'
+                          }
+                        </div>
                         <p className="text-sm mt-1">
                           Your Answer(s): <span className={`font-medium ${isCorrect ? 'text-brand-green' : 'text-red-600'}`}>
-                            {currentExercise.type === 'past_tenses_fill' ?
-                              `(${userAnswers[currentExercise.id]?.[`${qIndex}_1`] || ''}, ${userAnswers[currentExercise.id]?.[`${qIndex}_2`] || ''})`
-                              : (userAnswer === '_IS_CORRECT_' ? '(Bold word is correct)' : (userAnswer || '(No answer)'))}
+                            {currentExercise.type === 'past_tenses_fill'
+                              ? `(${userAnswers[currentExercise.id]?.[`${qIndex}_1`] || ''}, ${userAnswers[currentExercise.id]?.[`${qIndex}_2`] || ''}${q.correct3 ? `, ${userAnswers[currentExercise.id]?.[`${qIndex}_3`] || ''}` : ''})`
+                              : currentExercise.type === 'drag_and_drop_words'
+                                ? (userAnswer.join(' ') || '(No answer)')
+                                : (userAnswer === '_IS_CORRECT_' ? '(Bold word is correct)' : (userAnswer || '(No answer)'))
+                            }
                           </span>
                         </p>
                         <p className="text-sm ">
                           Correct Answer(s): <span className="font-medium text-green-500">
-                            {currentExercise.type === 'past_tenses_fill' ?
-                              `(${q.correct1}, ${q.correct2})`
-                              : (q.isCorrectDefault ? q.boldWord : q.correctAnswer ? q.correctAnswer : q.correct)}
+                            {currentExercise.type === 'past_tenses_fill'
+                              ? `(${q.correct1}, ${q.correct2}${q.correct3 ? `, ${q.correct3}` : ''})`
+                              : currentExercise.type === 'drag_and_drop_words'
+                                ? q.correct_answer.join(' ')
+                                : (q.isCorrectDefault ? q.boldWord : q.correctAnswer ? q.correctAnswer : q.correct)
+                            }
                           </span>
                         </p>
-                        <p className="text-sm mt-1 bg-brand-blue/20 p-2 rounded">
-                          <span className="font-medium">Why:</span> {q.explanation}
+                        <p className="text-lg mt-1 bg-brand-blue/20 p-2 rounded ">
+                          <span className="font-bold text-green-500">Why:</span> <span>
+                            <ReactMarkdown>{q.explanation}</ReactMarkdown>
+                          </span>
                         </p>
                       </div>
                     );

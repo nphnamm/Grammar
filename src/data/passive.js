@@ -20,6 +20,69 @@ export const exercises = [
     ]
   },
   {
+    id: 'B_drag_drop',
+    type: 'drag_and_drop_words',
+    title: 'B Rewrite correctly. Drag and drop the words to form the correct phrase.',
+    questions: [
+      {
+        id: 1,
+        sentence_start: 'My dad',
+        sentence_end: 'late on Saturday mornings.',
+        word_bank: ['often', 'up', 'gets'],
+        correct_answer: ['often', 'gets', 'up']
+      },
+      {
+        id: 2,
+        sentence_start: '',
+        sentence_end: 'any other languages apart from English?',
+        word_bank: ['you', 'Do', 'speak'],
+        correct_answer: ['Do', 'you', 'speak']
+      },
+      {
+        id: 3,
+        sentence_start: 'I',
+        sentence_end: 'all my Christmas presents and it\'s only October!',
+        word_bank: ['bought', 'already', 'have'],
+        correct_answer: ['have', 'already', 'bought']
+      },
+      {
+        id: 4,
+        sentence_start: "It's the first time I'",
+        sentence_end: 'a party at home.',
+        word_bank: ['ever', 'had', 've'],
+        correct_answer: ['ve', 'ever', 'had']
+      },
+      {
+        id: 5,
+        sentence_start: 'Actually, I think Darren',
+        sentence_end: 'quite hard sometimes.',
+        word_bank: ['works'],
+        correct_answer: ['works']
+      },
+      {
+        id: 6,
+        sentence_start: 'Carlo',
+        sentence_end: 'Chinese food before.',
+        word_bank: ['eaten', 'has', 'never'],
+        correct_answer: ['has', 'never', 'eaten']
+      },
+      {
+        id: 7,
+        sentence_start: 'Sean',
+        sentence_end: 'a table for tonight.',
+        word_bank: ['booked', 'already', 'has'],
+        correct_answer: ['has', 'already', 'booked']
+      },
+      {
+        id: 8,
+        sentence_start: '',
+        sentence_end: 'any help painting her new flat?',
+        word_bank: ['need', 'Does', 'Melanie'],
+        correct_answer: ['Does', 'Melanie', 'need']
+      }
+    ]
+  },
+  {
     id: 'B7',
     type: 'fill_blanks_bank',
     title: 'B Grammar: Completing with the Passive Form',
@@ -128,7 +191,7 @@ export const exercises = [
     questions: [
       {
         baseWord: "your teacher / explain",
-        text: " If you don't understand, ____________ it to you again after the lesson.",  
+        text: " If you don't understand, ____________ it to you again after the lesson.",
         correct: "have your teacher explain",
         explanation: "The causative 'have someone do something' is used to mean 'ask someone to do something'. For example, 'I'll have my assistant call you.'"
       },
@@ -188,56 +251,244 @@ export const exercises = [
       }
     ]
   },
-
   {
-    id: "H",
-    type: "word_formation",
-    title: "H Grammar: Write the sentence using the given word.",
+    id: "I",
+    type: "multiple_choice",
+    title: "G. Choose the correct answer.",
+    instructions: "Choose the correct answer.",
     questions: [
       {
-        baseWord: "kept",
-        text: "1 They made me wait for over 20 minutes on the phone!. I ____________ for over 20 minutes on the phone!",
-        correct: "They kept me waiting for over 20 minutes on the phone!",
-        explanation: "‘Kept’ is followed by a noun/pronoun and an -ing form to describe continuing actions caused by someone."
+        id: "I1",
+        text: "When Nadine arrived, she soon ..................... at all her jokes.",
+        options: [
+          "had everyone laughing",
+          "had laughing everyone",
+          "had everyone laughing",
+          "had laughed everyone"
+        ],
+        correct: "had everyone laughing",
+        explanation: "The correct causative structure is 'had someone doing something', which means 'to cause someone to start doing something'. 'She had everyone laughing' means she made everyone laugh."
       },
       {
-        text: "2 Although people consider Ashley to be a star, she is always friendly towards everyone.",
-        correct: "Despite being considered a star, Ashley is always friendly towards everyone.",
-        explanation: "‘Despite’ is followed by a gerund or noun phrase; passive form ‘being considered’ fits here."
+        id: "I2",
+        text: "The government must ..................... strong measures against crime.",
+        options: [
+          "been seen to take",
+          "see to be taking",
+          "seen to take",
+          "be seen to be taking"
+        ],
+        correct: "be seen to be taking",
+        explanation: "This requires a passive modal structure. 'Must' is followed by 'be seen' (passive infinitive) and then 'to be taking' (continuous infinitive) to show an ongoing action that should be observed by the public."
       },
       {
-        text: "3 We have had reports that the Prime Minister is making a surprise visit to Syria.",
-        correct: "The Prime Minister is reported to be making a surprise visit to Syria.",
-        explanation: "Use the passive reporting structure: ‘is reported to be’ + present participle."
+        id: "I3",
+        text: "Mrs Davies asked me to tell you that she would like ..................... by Friday at the latest.",
+        options: [
+          "the orders sent",
+          "sending the orders",
+          "that you sent",
+          "sent the orders"
+        ],
+        correct: "the orders sent",
+        explanation: "The structure 'would like + object + past participle' is used to express a desire for something to be done by someone else. 'She would like the orders sent'."
       },
       {
-        text: "4 The manager provided the staff with extra training.",
-        correct: "The staff were provided with extra training by the manager.",
-        explanation: "Passive voice with ‘by’ to show the agent of the action."
+        id: "I4",
+        text: "Joining a gym ..................... , but I didn't really fancy the idea.",
+        options: [
+          "was suggested to me",
+          "to me was suggested",
+          "was suggested me",
+          "was suggesting me"
+        ],
+        correct: "was suggested to me",
+        explanation: "The verb 'suggest' in the passive voice is followed by 'to' before the indirect object (the person receiving the suggestion). 'Joining a gym' is the subject of the passive verb."
       },
       {
-        text: "5 I think someone needs to explain this computer program to me.",
-        correct: "I think I need this computer program explaining to me.",
-        explanation: "Causative structure: ‘need something doing’ means it needs to be done."
+        id: "I5",
+        text: "There ..................... between 4,000 and 6,000 languages in the world, depending on how you count them.",
+        options: [
+          "say to be",
+          "are said that",
+          "are said to be",
+          "said being"
+        ],
+        correct: "are said to be",
+        explanation: "This is a passive reporting structure. The correct form is 'There are said to be...' to report a general belief or fact."
       },
       {
-        text: "6 They have been building the new stadium for much longer than they originally estimated.",
-        correct: "The new stadium is under construction for much longer than they originally estimated.",
-        explanation: "‘Under construction’ is the standard phrase to describe ongoing building work."
+        id: "I6",
+        text: "I spoke to Victor last night and he says he ..................... while he was on holiday.",
+        options: [
+          "had stolen his phone",
+          "got stolen his phone",
+          "was got his phone stolen",
+          "had his phone stolen"
+        ],
+        correct: "had his phone stolen",
+        explanation: "The causative structure 'have something done' is used when someone arranges for something to be done, or when something (usually negative) happens to someone. 'He had his phone stolen' means someone stole his phone."
       },
       {
-        text: "7 Do you know why they made Craig stay behind after the lesson?",
-        correct: "Do you know why Craig was made to stay behind after the lesson?",
-        explanation: "In the passive, ‘made’ is followed by ‘to’ + verb."
+        id: "I7",
+        text: "Why didn't you ..................... you when you moved house?",
+        options: [
+          "have Aaron help",
+          "have got Aaron help",
+          "have Aaron helped",
+          "get Aaron help"
+        ],
+        correct: "have Aaron help",
+        explanation: "The causative structure 'have someone do something' means to ask or make someone do something. After 'didn't you', we use the base form 'have', followed by the person 'Aaron' and the base form of the next verb 'help'."
       },
       {
-        text: "8 Call Lionel and ask him to send the reports up to my office.",
-        correct: "Call Lionel and have him send the reports up to my office.",
-        explanation: "‘Have someone do something’ is a causative structure meaning to instruct or arrange for someone to do something."
+        id: "I8",
+        text: "Profits ..................... slightly next year, although we don't predict any job losses.",
+        options: [
+          "expect to fall",
+          "are expecting to fall",
+          "are expected falling",
+          "are expected to fall"
+        ],
+        correct: "are expected to fall",
+        explanation: "This is a passive structure used for future predictions. 'Profits' (the subject) are expected (by people) to fall. The correct structure is 'are expected to + infinitive'."
+      },
+      {
+        id: "I9",
+        text: "It's hard to believe that this film ..................... completely by computer.",
+        options: [
+          "was been generating",
+          "has generated",
+          "has been generated",
+          "was to generate"
+        ],
+        correct: "has been generated",
+        explanation: "This requires the present perfect passive ('has been' + past participle) to describe something that was created in the recent past and is still relevant. The film was generated by a computer."
+      },
+      {
+        "id": "I10",
+        "text": "As soon as Dad ..................... , we can leave.",
+        options: [
+          "has the car starting",
+          "has got the car started",
+          "got started the car",
+          "was got starting the car"
+        ],
+        correct: "B",
+        explanation: "The structure 'get something done' is a common causative form, often used informally, to mean 'succeed in doing something'. 'Has got the car started' means he has successfully started the car."
       }
     ]
-  }
-  
+  },
+  {
+    id: "J",
+    type: "fill_blanks_bank",
+    title: "H. Write one word in each gap.",
+    instructions: "Write one word in each gap.",
+    wordBank: [],
+    textSegments: [
+      "Imagine ",
+      " transported around the globe in a matter of hours, rather than the 24 hours which ",
+      " currently required to get from London to Sydney. Such is the promise of the scramjet, a highly experimental type of engine which has been ",
+      " development over the past couple of decades. In a conventional jet engine, air ",
+      " sucked into the engine at speeds below the speed of sound, where it is mixed ",
+      " fuel, ignited, and the exhaust gases provide thrust. In a scramjet, which has to ",
+      " taken to supersonic speeds by conventional means before it will operate, the air enters at supersonic speeds. It has ",
+      " estimated that a scramjet might be capable of travelling at 12-24 times the speed of sound. However, the technology ",
+      " been found to be extremely difficult to control. Although scientists ",
+      " had scramjets perform short flights, commercial aircraft are still a long way in the future, and indeed may never ",
+      " successfully developed."
+    ],
+    correctAnswers: [
+      {
+        index: 0,
+        word: "being",
+        explanation: "After the verb 'imagine', a gerund (-ing form) is used. 'Being transported' is the passive gerund."
+      },
+      {
+        index: 1,
+        word: "are",
+        explanation: "The relative pronoun 'which' refers to 'the 24 hours' (plural), so a plural verb is needed. The sentence is in the present tense, passive voice ('are required')."
+      },
+      {
+        index: 2,
+        word: "in",
+        explanation: "The correct prepositional phrase is 'in development', meaning in the process of being developed. 'Under development' is also possible."
+      },
+      {
+        index: 3,
+        word: "is",
+        explanation: "This is a present simple passive sentence describing how a jet engine works. 'Air' is a singular, uncountable noun, so the verb is 'is sucked'."
+      },
+      {
+        index: 4,
+        word: "with",
+        explanation: "The verb 'mixed' is followed by the preposition 'with'."
+      },
+      {
+        index: 5,
+        word: "be",
+        explanation: "This is a passive modal structure. The modal phrase 'has to' is followed by 'be' and then the past participle 'taken'."
+      },
+      {
+        index: 6,
+        word: "been",
+        explanation: "This is a present perfect passive structure used for reporting: 'It has been estimated that...'."
+      },
+      {
+        index: 7,
+        word: "has",
+        explanation: "This is a present perfect passive structure. The subject 'the technology' is singular, so the auxiliary verb is 'has' ('has been found')."
+      },
+      {
+        index: 8,
+        word: "have",
+        explanation: "This is a present perfect causative structure: 'have had something do something'. The subject 'scientists' is plural, so the auxiliary verb is 'have'."
+      },
+      {
+        index: 9,
+        word: "be",
+        explanation: "This is a passive modal structure. The modal verb 'may' is followed by the base form 'be' and the past participle 'developed'."
+      }
+    ]
+  },
+  {
+    id: 'E1',
+    type: 'single_word_fill',
+    wordBank: ['for', 'on', 'in', 'off', 'up', 'out', 'middle'],
+    title: 'Prepositional phrases: E Write one word in each gap.',
+    questions: [
+      {
+        text: '1 We were waiting outside the stadium ______________________________ a long time before they finally let us in.',
+        correct: 'for',
+        explanation: 'The correct prepositional phrase is "**for** a long time," indicating duration.'
+      },
+      {
+        text: '2 I\'ve got that concert __________________________ DVD – it\'s fantastic!',
+        correct: 'on',
+        explanation: 'The correct prepositional phrase is "**on** DVD," indicating the medium.'
+      },
+      {
+        text: '3 I ran all the way home and I was just __________________________ time for my favourite programme.',
+        correct: 'in',
+        explanation: 'The correct prepositional phrase is "**in** time," meaning arriving before the deadline or event.'
+      },
+      {
+        text: '4 Everyone clapped when the singer came __________________________ stage.',
+        correct: 'on',
+        explanation: 'The correct prepositional phrase is "**on** stage," referring to the performance area.'
+      },
+      {
+        text: '5 At the cinema, Mum sat on the right, Dad sat on the left and I sat __________________________ the middle.',
+        correct: 'in',
+        explanation: 'The correct prepositional phrase is "**in** the middle," indicating a central position.'
+      },
+      {
+        text: '6 Ed doesn\'t want to become a professional footballer. He just does it __________ fun.',
+        correct: 'for',
+        explanation: 'The correct prepositional phrase is "**for** fun," indicating the purpose or reason.'
+      }
+    ]
+  },
 ];
 export const theoryContent = [
   {
