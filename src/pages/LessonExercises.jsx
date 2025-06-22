@@ -277,7 +277,7 @@ function LessonExercises() {
   };
 
   return (
-    <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
+    <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-16 font-sans pt-20">
       <GradingModal
         score={score}
         show={showGradingModal && showFeedback && (currentView === 'exercises')}
@@ -285,23 +285,23 @@ function LessonExercises() {
         onNext={handleNextExerciseModal}
         isLastExercise={isLastExercise}
       />
-      <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-8 sm:p-10">
-        <div className="flex justify-between items-center mb-8">
+      <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-4 sm:p-8 lg:p-10">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4 sm:gap-0">
           <Link
             to="/"
-            className="bg-brand-green text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-green/90"
+            className="w-full sm:w-auto bg-brand-green text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-green/90 text-center"
           >
             ← Back to Lessons
           </Link>
           <button
             onClick={navigateToExerciseList}
-            className="bg-brand-blue text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-blue/90"
+            className="w-full sm:w-auto bg-brand-blue text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-blue/90 text-center"
           >
             Exercises List
           </button>
         </div>
 
-        <h1 className="text-4xl font-extrabold text-base-black mb-6 text-center font-sans">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-base-black mb-4 sm:mb-6 text-center font-sans">
           {lesson.title} - Exercises
         </h1>
 
@@ -309,11 +309,11 @@ function LessonExercises() {
           <ExerciseSelectionPage exercises={exercises} onSelectExercise={selectExercise} />
         ) : (
           <>
-            <h2 className="text-2xl font-semibold text-base-black mb-4 border-b pb-2">
+            <h2 className="text-xl sm:text-2xl font-semibold text-base-black mb-4 border-b pb-2">
               {currentExercise?.title}
             </h2>
             {renderWordBank(currentExercise?.wordBank)}
-            <p className="text-base-black mb-6 leading-relaxed">
+            <p className="text-base-black mb-6 leading-relaxed text-sm sm:text-base">
               {currentExercise?.instructions}
             </p>
 
@@ -392,11 +392,11 @@ function LessonExercises() {
               )
             )}
 
-            <div className="flex flex-col sm:flex-row justify-between mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 space-y-3 sm:space-y-0 sm:space-x-4">
               {currentExercise?.type !== 'fill_blanks_bank' && !showFeedback && (
                 <button
                   onClick={handleSubmit}
-                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75"
+                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75 text-sm sm:text-base"
                   disabled={showFeedback}
                 >
                   Submit Answer
@@ -406,7 +406,7 @@ function LessonExercises() {
               {currentExercise?.type === 'fill_blanks_bank' && !showFeedback && (
                 <button
                   onClick={handleSubmit}
-                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75"
+                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75 text-sm sm:text-base"
                   disabled={showFeedback}
                 >
                   Submit Exercise
@@ -416,7 +416,7 @@ function LessonExercises() {
               {showFeedback && currentExercise?.questions && (currentQuestionIndex < currentExercise.questions.length - 1) && (
                 <button
                   onClick={handleNextQuestion}
-                  className="flex-1 bg-brand-blue hover:bg-brand-blue/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75"
+                  className="flex-1 bg-brand-blue hover:bg-brand-blue/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75 text-sm sm:text-base"
                 >
                   Next Question
                 </button>
@@ -425,7 +425,7 @@ function LessonExercises() {
               {showFeedback && currentExercise?.type !== 'fill_blanks_bank' && currentExercise?.questions && currentQuestionIndex === currentExercise.questions.length - 1 && (
                 <button
                   onClick={handleNextExercise}
-                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75"
+                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75 text-sm sm:text-base"
                 >
                   Finish Exercise
                 </button>
@@ -434,7 +434,7 @@ function LessonExercises() {
               {showFeedback && currentExercise?.type === 'fill_blanks_bank' && (
                 <button
                   onClick={handleNextExercise}
-                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75"
+                  className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75 text-sm sm:text-base"
                 >
                   Finish Exercise
                 </button>
@@ -442,16 +442,16 @@ function LessonExercises() {
 
               <button
                 onClick={navigateToExerciseList}
-                className="flex-1 bg-brand-blue hover:bg-brand-blue/80 text-base-black font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75"
+                className="flex-1 bg-brand-blue hover:bg-brand-blue/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75 text-sm sm:text-base"
               >
                 Back to Exercises List
               </button>
             </div>
 
             {showFeedback && (
-              <div className="mt-8 p-6 bg-brand-blue/10 border-l-4 border-brand-blue text-base-black rounded-lg shadow-inner">
+              <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-brand-blue/10 border-l-4 border-brand-blue text-base-black rounded-lg shadow-inner">
 
-                <h3 className="text-xl font-bold mb-3">Explanation:</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-3">Explanation:</h3>
                 {currentExercise?.type === 'fill_blanks_bank' ? (
                   currentExercise.correctAnswers?.map((q, qIndex) => {
                     const userAnswer = (userAnswers[currentExercise.id] && userAnswers[currentExercise.id][q.index]) || '';
@@ -546,7 +546,7 @@ function LessonExercises() {
                             }
                           </span>
                         </p>
-                        <p className="text-lg mt-1 bg-brand-blue/20 p-2 rounded ">
+                        <p className="text-base sm:text-lg mt-1 bg-brand-blue/20 p-2 rounded ">
                           <span className="font-bold text-green-500">Why:</span> <span>
                             <ReactMarkdown>{q.explanation}</ReactMarkdown>
                           </span>

@@ -11,7 +11,7 @@ const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFee
         const correctEntry = exercise.correctAnswers.find(item => item.index === qIndex);
         const isCorrect = correctEntry && userAnswer.toLowerCase().trim() === correctEntry.word.toLowerCase().trim();
 
-        let inputClasses = "inline-block w-32 px-3 py-2 mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 ";
+        let inputClasses = "inline-block w-24 sm:w-32 px-2 sm:px-3 py-1 sm:py-2 mx-1 sm:mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 text-sm sm:text-base ";
         
         if (showFeedback) {
           if (isCorrect) {
@@ -43,12 +43,12 @@ const FillBlanksBankExercise = ({ exercise, userAnswers, onAnswerChange, showFee
 
   return (
     <div className="card">
-      <div className="mb-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
-        <p className="font-semibold text-black mb-2">Word Bank:</p>
-        <p className="text-gray-700">{exercise.wordBank.join(', ')}</p>
+      <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <p className="font-semibold text-black mb-2 text-sm sm:text-base">Word Bank:</p>
+        <p className="text-gray-700 text-sm sm:text-base">{exercise.wordBank.join(', ')}</p>
       </div>
-      <div className="bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
-        <div className="text-lg leading-loose text-black ">
+      <div className="bg-gray-50 p-4 sm:p-6 rounded-xl shadow-inner border border-gray-200">
+        <div className="text-base sm:text-lg leading-loose text-black">
           {renderTextWithBlanks()}
         </div>
       </div>

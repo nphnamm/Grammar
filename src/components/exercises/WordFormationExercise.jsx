@@ -9,7 +9,7 @@ const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, on
 
   const parts = q?.text?.split('____________');
   
-  let inputClasses = "inline-block w-48 px-4 py-3 mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 ";
+  let inputClasses = "inline-block w-32 sm:w-48 px-3 sm:px-4 py-2 sm:py-3 mx-1 sm:mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 text-sm sm:text-base ";
   
   if (showFeedback) {
     if (isCorrect) {
@@ -23,7 +23,7 @@ const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, on
   
   return (
     <div className="card">
-      <p className="text-black font-medium mb-4 text-lg leading-relaxed">
+      <p className="text-black font-medium mb-4 text-base sm:text-lg leading-relaxed">
         {qIndex + 1}. {parts[0]}
         <input
           type="text"
@@ -34,7 +34,7 @@ const WordFormationExercise = ({ exercise, currentQuestionIndex, userAnswers, on
           aria-label={`Answer for question ${qIndex + 1}`}
           onKeyDown={e => { if (e.key === 'Enter') onSubmit(); }}
         />
-        {parts[1]} <span className="font-bold text-black bg-gray-100 px-2 py-1 rounded-lg border border-gray-200">({q.baseWord})</span>
+        {parts[1]} <span className="font-bold text-black bg-gray-100 px-2 py-1 rounded-lg border border-gray-200 text-sm sm:text-base">({q.baseWord})</span>
       </p>
     </div>
   );

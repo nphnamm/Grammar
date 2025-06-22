@@ -251,31 +251,31 @@ function LessonTheory() {
   };
 
   return (
-    <div className="min-h-screen bg-base-white flex flex-col items-center p-16 sm:p-6 lg:p-16 font-sans">
-      <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-8 sm:p-10">
-        <div className="flex justify-between items-center mb-8">
+    <div className="min-h-screen bg-base-white flex flex-col items-center p-4 sm:p-6 lg:p-16 font-sans pt-20">
+      <div className="w-full max-w-4xl bg-brand-blue border-2 border-base-black rounded-2xl shadow-lg p-4 sm:p-8 lg:p-10">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4 sm:gap-0">
           <Link
             to="/"
-            className="bg-brand-green text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-green/90"
+            className="w-full sm:w-auto bg-brand-green text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-green/90 text-center"
           >
             ← Back to Lessons
           </Link>
           <Link
             to={`/lesson/${lessonId}/exercises`}
-            className="bg-brand-yellow text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-yellow/90"
+            className="w-full sm:w-auto bg-brand-yellow text-base-black font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-yellow/90 text-center"
           >
             Start Exercises →
           </Link>
         </div>
 
-        <h1 className="text-4xl font-extrabold text-base-black mb-4 text-center font-sans">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-base-black mb-4 sm:mb-6 text-center font-sans">
           {lesson?.theory?.title}
         </h1>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {lesson?.theory?.sections.map((section, index) => (
-            <div key={index} className="bg-base-white border-2 border-base-black rounded-xl p-6 shadow-lg">
-              <h2 className="text-2xl font-bold text-base-black mb-4 border-b-2 border-brand-green pb-2">
+            <div key={index} className="bg-base-white border-2 border-base-black rounded-xl p-4 sm:p-6 shadow-lg">
+              <h2 className="text-xl sm:text-2xl font-bold text-base-black mb-4 border-b-2 border-brand-green pb-2">
                 {section.title}
               </h2>
 
@@ -285,15 +285,15 @@ function LessonTheory() {
         </div>
 
         {/* List all exercises for this lesson */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Exercises for this Lesson</h2>
-          <div className="space-y-4 max-w-xl mx-auto">
+        <div className="mt-8 sm:mt-12 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Exercises for this Lesson</h2>
+          <div className="space-y-3 sm:space-y-4 max-w-xl mx-auto">
             {lesson?.exercises && lesson?.exercises.length > 0 ? (
               lesson?.exercises.map((exercise, idx) => (
                 <Link
                   key={exercise.id}
                   to={`/lesson/${lessonId}/exercises/${exercise.id}`}
-                  className="block bg-brand-yellow text-base-black font-bold py-2 px-4 rounded-lg border-2 border-base-black shadow-md hover:bg-brand-yellow/90"
+                  className="block bg-brand-yellow text-base-black font-bold py-2 px-4 rounded-lg border-2 border-base-black shadow-md hover:bg-brand-yellow/90 text-sm sm:text-base"
                 >
                   {idx + 1}. {exercise.title}
                 </Link>
@@ -304,10 +304,10 @@ function LessonTheory() {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-6 sm:mt-8 text-center">
           <Link
             to={`/lesson/${lessonId}/exercises`}
-            className="bg-brand-yellow text-base-black font-bold py-4 px-8 rounded-2xl transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-yellow/90 text-lg"
+            className="bg-brand-yellow text-base-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-2xl transition duration-300 ease-in-out shadow-md border-2 border-base-black hover:bg-brand-yellow/90 text-base sm:text-lg"
           >
             Ready to Practice? Start Exercises
           </Link>

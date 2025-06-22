@@ -9,7 +9,7 @@ const SingleWordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
 
   const parts = q.text.split('__________');
   
-  let inputClasses = "inline-block w-48 px-4 py-3 mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 ";
+  let inputClasses = "inline-block w-32 sm:w-48 px-3 sm:px-4 py-2 sm:py-3 mx-1 sm:mx-2 border-b-2 text-black focus:outline-none focus:ring-2 rounded-lg transition-all duration-200 text-sm sm:text-base ";
   
   if (showFeedback) {
     if (isCorrect) {
@@ -23,7 +23,7 @@ const SingleWordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, o
   
   return (
     <div className="card">
-      <p className="text-black font-medium mb-4 text-lg leading-relaxed">
+      <p className="text-black font-medium mb-4 text-base sm:text-lg leading-relaxed">
         {qIndex + 1}. {parts[0]}
         <input
           type="text"

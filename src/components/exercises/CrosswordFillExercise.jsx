@@ -7,7 +7,7 @@ const CrosswordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, on
   const userAnswer = userAnswers[qIndex] || '';
   const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
 
-  let inputClasses = "w-full p-4 border-2 rounded-xl text-black focus:outline-none focus:ring-2 transition-all duration-200 ";
+  let inputClasses = "w-full p-3 sm:p-4 border-2 rounded-xl text-black focus:outline-none focus:ring-2 transition-all duration-200 text-sm sm:text-base ";
   
   if (showFeedback) {
     if (isCorrect) {
@@ -21,7 +21,7 @@ const CrosswordFillExercise = ({ exercise, currentQuestionIndex, userAnswers, on
 
   return (
     <div className="card">
-      <p className="text-black font-medium mb-4 text-lg leading-relaxed">
+      <p className="text-black font-medium mb-4 text-base sm:text-lg leading-relaxed">
         {q.number}. {q.direction}: {q.clue}
       </p>
       <input

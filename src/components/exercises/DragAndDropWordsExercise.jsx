@@ -56,15 +56,15 @@ const DragAndDropWordsExercise = ({ exercise, currentQuestionIndex, userAnswers,
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="card">
-        <p className="text-black font-medium mb-4 text-lg leading-relaxed flex flex-wrap items-center">
+        <p className="text-black font-medium mb-4 text-base sm:text-lg leading-relaxed flex flex-wrap items-center gap-2">
           <span className="mr-2">{qIndex + 1}.</span>
-          <span>{q.sentence_start}</span>
+          <span className="flex-1">{q.sentence_start}</span>
           <Droppable droppableId="answer-area" direction="horizontal">
             {(provided, snapshot) => (
               <span
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className={`inline-flex items-center align-middle h-12 mx-2 p-2 border-2 border-dashed rounded-lg min-w-[150px] bg-gray-50 ${snapshot.isDraggingOver ? 'border-blue-400 bg-blue-100' : 'border-gray-300'}`}
+                className={`inline-flex items-center align-middle h-10 sm:h-12 mx-1 sm:mx-2 p-2 border-2 border-dashed rounded-lg min-w-[120px] sm:min-w-[150px] bg-gray-50 ${snapshot.isDraggingOver ? 'border-blue-400 bg-blue-100' : 'border-gray-300'}`}
               >
                 {userAnswer.map((word, index) => (
                   <Draggable key={word} draggableId={`answer-${word}`} index={index}>
@@ -74,7 +74,7 @@ const DragAndDropWordsExercise = ({ exercise, currentQuestionIndex, userAnswers,
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         onClick={() => handleRemoveWord(word)}
-                        className={`px-3 py-1 rounded-md text-white shadow-md mx-1 cursor-pointer ${isCorrect ? 'bg-green-500' : showFeedback ? 'bg-red-500' : 'bg-blue-500'}`}
+                        className={`px-2 sm:px-3 py-1 rounded-md text-white shadow-md mx-1 cursor-pointer text-sm sm:text-base ${isCorrect ? 'bg-green-500' : showFeedback ? 'bg-red-500' : 'bg-blue-500'}`}
                       >
                         {word}
                       </span>
@@ -85,11 +85,11 @@ const DragAndDropWordsExercise = ({ exercise, currentQuestionIndex, userAnswers,
               </span>
             )}
           </Droppable>
-          <span>{q.sentence_end}</span>
+          <span className="flex-1">{q.sentence_end}</span>
         </p>
         
-        <div className="mt-6 p-4 border-t border-gray-200">
-          <h4 className="font-bold text-gray-600 mb-3">Word Bank</h4>
+        <div className="mt-4 sm:mt-6 p-3 sm:p-4 border-t border-gray-200">
+          <h4 className="font-bold text-gray-600 mb-3 text-sm sm:text-base">Word Bank</h4>
           <Droppable droppableId="word-bank" direction="horizontal">
             {(provided) => (
               <div
@@ -105,7 +105,7 @@ const DragAndDropWordsExercise = ({ exercise, currentQuestionIndex, userAnswers,
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         onClick={() => handleAddWord(word)}
-                        className="px-3 py-1 rounded-md shadow bg-white text-gray-800 cursor-pointer"
+                        className="px-2 sm:px-3 py-1 rounded-md shadow bg-white text-gray-800 cursor-pointer text-sm sm:text-base hover:bg-gray-50 transition-colors"
                       >
                         {word}
                       </div>

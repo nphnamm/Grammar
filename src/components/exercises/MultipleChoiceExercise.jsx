@@ -9,12 +9,12 @@ const MultipleChoiceExercise = ({ exercise, currentQuestionIndex, userAnswers, o
 
   return (
     <div className="card">
-      <p className="text-black font-medium mb-6 text-lg leading-relaxed">
+      <p className="text-black font-medium mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
         {qIndex + 1}. {q.text.split('/').join(' / ')}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {q.options.map((option, optIndex) => {
-          let optionClasses = "flex items-center p-4 rounded-xl cursor-pointer transition-all duration-200 ease-in-out border-2 ";
+          let optionClasses = "flex items-center p-3 sm:p-4 rounded-xl cursor-pointer transition-all duration-200 ease-in-out border-2 text-sm sm:text-base ";
           
           if (showFeedback) {
             if (isCorrect && userAnswer === option) {
@@ -31,19 +31,16 @@ const MultipleChoiceExercise = ({ exercise, currentQuestionIndex, userAnswers, o
           }
 
           return (
-            <label key={optIndex} className={optionClasses}>
-              <input
-                type="radio"
-                name={`mcq-${exercise.id}-${qIndex}`}
-                value={option}
-                checked={userAnswer === option}
-                onChange={() => onAnswerChange(qIndex, option)}
-                className="mr-3 h-4 w-4 text-black border-gray-300 focus:ring-gray-400"
-                disabled={showFeedback}
-                aria-label={`Option ${option} for question ${qIndex + 1}`}
-              />
-              <span className="font-medium">{option}</span>
-            </label>
+            <div
+              key={optIndex}
+              className={optionClasses}
+              onClick={() => !showFeedback && onAnswerChange(qIndex, option)}
+            >
+              <span className="mr-3 text-lg font-bold text-gray-400">
+                {String.fromCharCode(65 + optIndex)}
+              </span>
+              <span>{option}</span>
+            </div>
           );
         })}
       </div>
