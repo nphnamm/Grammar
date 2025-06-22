@@ -393,7 +393,7 @@ function LessonExercises() {
             )}
 
             <div className="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 space-y-3 sm:space-y-0 sm:space-x-4">
-              {currentExercise?.type !== 'fill_blanks_bank' && !showFeedback && (
+              {currentExercise?.type !== 'fill_blanks_bank' && currentExercise?.type !== 'multiple_choice' && !showFeedback && (
                 <button
                   onClick={handleSubmit}
                   className="flex-1 bg-brand-green hover:bg-brand-green/80 text-base-black font-bold py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-75 text-sm sm:text-base"

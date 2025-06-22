@@ -1,22 +1,106 @@
 export const exercises = [
   {
-    id: 'A7',
-    type: 'bold_word_correction',
-    title: 'A Grammar: Correcting Verb Forms',
-    instructions: 'If the verb in bold is correct, click "Correct". If it is incorrect, click "Wrong" and type the correct verb form.',
+    id: "A_bold_word_correction",
+    type: "bold_word_correction",
+    title: "A Grammar: Correcting Verb Forms",
+    instructions: "If the verb in bold is correct, click \"Correct\". If it is incorrect, click \"Wrong\" and type the correct verb form.",
     questions: [
-      { number: 1, text: "Could you tell me where your passport **was been issued**?", boldWord: 'was been issued', correctAnswer: 'was issued', isCorrectDefault: false, explanation: "The past simple passive is formed with `was/were` + past participle. 'Been' is not needed here." },
-      { number: 2, text: "When the winning actor **was** finally **announced**, a big cheer went up.", boldWord: 'was announced', correctAnswer: '_IS_CORRECT_', isCorrectDefault: true, explanation: "This is a correct past simple passive form (`was` + past participle)." },
-      { number: 3, text: "**Has** your business trip to Calcutta next week **confirmed** by the Indian office?", boldWord: 'Has confirmed', correctAnswer: 'Has been confirmed', isCorrectDefault: false, explanation: "The present perfect passive requires 'has/have been' + past participle. The sentence should be 'Has your business trip... been confirmed'." },
-      { number: 4, text: "Everyone who **was been invited** to the wedding came.", boldWord: 'was been invited', correctAnswer: 'had been invited', isCorrectDefault: false, explanation: "The past perfect passive (`had been` + past participle) is used because the invitation happened before they came." },
-      { number: 5, text: "The wire coat hanger **invented** in 1903 by a Mr Parkhouse.", boldWord: 'invented', correctAnswer: 'was invented', isCorrectDefault: false, explanation: "This sentence requires a passive verb. The coat hanger didn't invent something; it 'was invented'." },
-      { number: 6, text: "The issue **has discussed** in Parliament yesterday, but no decisions were taken.", boldWord: 'has discussed', correctAnswer: 'was discussed', isCorrectDefault: false, explanation: "The context 'yesterday' requires the past simple passive ('was discussed'), not the present perfect." },
-      { number: 7, text: "By the time we get there, the problem **should have been sorted out**.", boldWord: 'should have been sorted out', correctAnswer: '_IS_CORRECT_', isCorrectDefault: true, explanation: "This is a correct modal perfect passive form." },
-      { number: 8, text: "Britain **was be invaded** by the Romans under Emperor Claudius in 43 AD.", boldWord: 'was be invaded', correctAnswer: 'was invaded', isCorrectDefault: false, explanation: "The past simple passive is formed with `was/were` + past participle ('invaded'), not the base form." },
-      { number: 9, text: "The party **had been planned** months in advance, but we still had problems.", boldWord: 'had been planned', correctAnswer: '_IS_CORRECT_', isCorrectDefault: true, explanation: "This is a correct past perfect passive form." },
-      { number: 10, text: "After **be treated**, I was allowed to leave the hospital.", boldWord: 'be treated', correctAnswer: 'being treated', isCorrectDefault: false, explanation: "After a preposition like 'after', the passive gerund form ('being' + past participle) is required." },
-      { number: 11, text: "We boarded the ship and **were showing** to our cabin by a steward.", boldWord: 'were showing', correctAnswer: 'were shown', isCorrectDefault: false, explanation: "The passive voice is needed. We didn't show the steward; we 'were shown' to our cabin." },
-      { number: 12, text: "The new supermarket **is to be opened** by an actor from a soap opera.", boldWord: 'is to be opened', correctAnswer: '_IS_CORRECT_', isCorrectDefault: true, explanation: "The structure 'is/are to be' + past participle is a formal way to express a future plan in the passive." }
+      {
+        number: 1,
+        text: "Could you tell me where your passport **was been issued**?",
+        boldWord: "was been issued",
+        correctAnswer: "was issued",
+        isCorrectDefault: false,
+        explanation: "The passive voice in the past simple is formed using 'was' or 'were' followed by the past participle of the main verb. In this case, 'issued' is the past participle of 'issue'. The word 'been' is used in perfect tenses (e.g., has been, had been) or with continuous passive forms (e.g., is being, was being), but it is not required for a simple past passive construction like this. Therefore, 'was issued' is the correct and most concise form."
+      },
+      {
+        number: 2,
+        text: "When the winning actor **was** finally **announced**, a big cheer went up.",
+        boldWord: "was announced",
+        correctAnswer: "_IS_CORRECT_",
+        isCorrectDefault: true,
+        explanation: "This sentence correctly uses the past simple passive voice. The structure 'was/were' + past participle ('announced') is appropriate for an action completed in the past where the focus is on the recipient of the action (the actor) rather than the performer. The actor didn't announce something; they 'were announced'."
+      },
+      {
+        number: 3,
+        text: "**Has** your business trip to Calcutta next week **confirmed** by the Indian office?",
+        boldWord: "Has confirmed",
+        correctAnswer: "Has been confirmed",
+        isCorrectDefault: false,
+        explanation: "This sentence requires the present perfect passive voice because the action of confirming happened at an unspecified time before now, and its result is still relevant (the trip is now confirmed). The present perfect passive is formed with 'has/have been' + past participle. Since 'business trip' is singular, 'has' is used, followed by 'been confirmed'. The original 'Has confirmed' would imply the trip itself performed the action of confirming, which is incorrect."
+      },
+      {
+        number: 4,
+        text: "Everyone who **was been invited** to the wedding came.",
+        boldWord: "was been invited",
+        correctAnswer: "had been invited",
+        isCorrectDefault: false,
+        explanation: "The past perfect passive ('had been' + past participle) is necessary here. The act of being invited happened *before* they came to the wedding. The past perfect clearly establishes this sequence of events. 'Was been invited' is grammatically incorrect; 'was invited' would be simple past passive, but 'had been invited' correctly conveys the prior action."
+      },
+      {
+        number: 5,
+        text: "The wire coat hanger **invented** in 1903 by a Mr Parkhouse.",
+        boldWord: "invented",
+        correctAnswer: "was invented",
+        isCorrectDefault: false,
+        explanation: "This sentence needs to be in the passive voice because the subject, 'the wire coat hanger,' is receiving the action (it was invented) rather than performing it. The past simple passive is formed with 'was/were' + past participle. Since the event happened in 1903, 'was invented' is the correct past simple passive form. 'Invented' alone would imply the coat hanger did the inventing."
+      },
+      {
+        number: 6,
+        text: "The issue **has discussed** in Parliament yesterday, but no decisions were taken.",
+        boldWord: "has discussed",
+        correctAnswer: "was discussed",
+        isCorrectDefault: false,
+        explanation: "The time marker 'yesterday' clearly indicates that a past simple tense is required. The issue was the recipient of the action of discussing, so the past simple passive voice is needed. This is formed by 'was/were' + past participle. Therefore, 'was discussed' is the correct form. 'Has discussed' is present perfect active and inappropriate for an action completed at a specific past time."
+      },
+      {
+        number: 7,
+        text: "By the time we get there, the problem **should have been sorted out**.",
+        boldWord: "should have been sorted out",
+        correctAnswer: "_IS_CORRECT_",
+        isCorrectDefault: true,
+        explanation: "This sentence uses a correct modal perfect passive construction. 'Should have been sorted out' implies that by a certain point in the future ('By the time we get there'), the problem is expected to be resolved by someone else. The structure 'modal verb + have been + past participle' is used for passive actions that are expected or advised to have been completed by a specific time, and it is grammatically sound."
+      },
+      {
+        number: 8,
+        text: "Britain **was be invaded** by the Romans under Emperor Claudius in 43 AD.",
+        boldWord: "was be invaded",
+        correctAnswer: "was invaded",
+        isCorrectDefault: false,
+        explanation: "The past simple passive voice is formed with 'was' or 'were' followed directly by the past participle of the main verb. The past participle of 'invade' is 'invaded'. The inclusion of 'be' after 'was' is grammatically incorrect in this context. Therefore, 'was invaded' is the correct and appropriate form."
+      },
+      {
+        number: 9,
+        text: "The party **had been planned** months in advance, but we still had problems.",
+        boldWord: "had been planned",
+        correctAnswer: "_IS_CORRECT_",
+        isCorrectDefault: true,
+        explanation: "This sentence correctly uses the past perfect passive voice. 'Had been planned' indicates an action (planning the party) that was completed at a point in the past before another past action (having problems). This structure correctly emphasizes the prior completion of the planning, and it is grammatically accurate."
+      },
+      {
+        number: 10,
+        text: "After **be treated**, I was allowed to leave the hospital.",
+        boldWord: "be treated",
+        correctAnswer: "being treated",
+        isCorrectDefault: false,
+        explanation: "When a verb follows a preposition (like 'after'), it typically takes the gerund form (-ing). Since the action is passive (the person was treated by someone else), the passive gerund form is used: 'being' + past participle. Therefore, 'being treated' correctly conveys the passive action occurring after the specified time."
+      },
+      {
+        number: 11,
+        text: "We boarded the ship and **were showing** to our cabin by a steward.",
+        boldWord: "were showing",
+        correctAnswer: "were shown",
+        isCorrectDefault: false,
+        explanation: "The sentence requires the passive voice because 'we' are the recipients of the action (being shown). The past simple passive is formed with 'was/were' + past participle. The past participle of 'show' is 'shown'. 'Were showing' would be past continuous active, implying that 'we' were performing the action of showing, which is incorrect in this context."
+      },
+      {
+        number: 12,
+        text: "The new supermarket **is to be opened** by an actor from a soap opera.",
+        boldWord: "is to be opened",
+        correctAnswer: "_IS_CORRECT_",
+        isCorrectDefault: true,
+        explanation: "The structure 'is/are to be' + past participle is a correct and formal way to express a future arrangement or instruction in the passive voice. It implies a planned or scheduled event. In this case, the supermarket is planned to be opened by the actor, making 'is to be opened' grammatically sound and appropriate."
+      }
     ]
   },
   {

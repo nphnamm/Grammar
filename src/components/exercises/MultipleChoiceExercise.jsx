@@ -1,11 +1,19 @@
 import React from 'react';
 
-const MultipleChoiceExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback }) => {
+const MultipleChoiceExercise = ({ exercise, currentQuestionIndex, userAnswers, onAnswerChange, showFeedback, onSubmit }) => {
   const q = exercise.questions[currentQuestionIndex];
   const qIndex = currentQuestionIndex;
 
   const userAnswer = userAnswers[qIndex];
   const isCorrect = userAnswer === q.correct;
+
+  const handleOptionClick = (option) => {
+    if (!showFeedback) {
+      onAnswerChange(qIndex, option);
+      // Automatically submit the answer when an option is clicked
+      onSubmit();
+    }
+  };
 
   return (
     <div className="card">
@@ -34,7 +42,7 @@ const MultipleChoiceExercise = ({ exercise, currentQuestionIndex, userAnswers, o
             <div
               key={optIndex}
               className={optionClasses}
-              onClick={() => !showFeedback && onAnswerChange(qIndex, option)}
+              onClick={() => handleOptionClick(option)}
             >
               <span className="mr-3 text-lg font-bold text-gray-400">
                 {String.fromCharCode(65 + optIndex)}
