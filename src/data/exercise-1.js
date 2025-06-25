@@ -52,37 +52,37 @@ export const exercises = [
       title: 'Topic vocabulary: C Circle the correct word.',
       questions: [
         {
-          text: '1 I really like playing board / video games like Monopoly and Cluedo.',
+          text: 'I really like playing board / video games like Monopoly and Cluedo.',
           options: ['board', 'video'],
           correct: 'board',
           explanation: 'Monopoly and Cluedo are classic examples of **board games**, not video games, which are played on electronic devices.'
         },
         {
-          text: '2 Roy was the best player, so he wasn\'t surprised when he became captain / club of the team.',
+          text: 'Roy was the best player, so he wasn\'t surprised when he became captain / club of the team.',
           options: ['captain', 'club'],
           correct: 'captain',
           explanation: 'The leader of a sports team is called the **captain**.'
         },
         {
-          text: '3 Lots of people get defeat / pleasure from just watching sport from their armchairs.',
+          text: 'Lots of people get defeat / pleasure from just watching sport from their armchairs.',
           options: ['defeat', 'pleasure'],
           correct: 'pleasure',
           explanation: 'People derive enjoyment or satisfaction, which is **pleasure**, from watching sports. "Defeat" means losing and wouldn\'t be something people "get from" watching for enjoyment.'
         },
         {
-          text: '4 I thought the music at the concert / rhythm we went to last night was great.',
+          text: 'I thought the music at the concert / rhythm we went to last night was great.',
           options: ['concert', 'rhythm'],
           correct: 'concert',
           explanation: 'A **concert** is a live musical performance. Rhythm refers to the pattern of sounds in music, not the event itself.'
         },
         {
-          text: '5 Everyone in my family supports the same competition / team.',
+          text: 'Everyone in my family supports the same competition / team.',
           options: ['competition', 'team'],
           correct: 'team',
           explanation: 'People typically support a specific **team** in a sport, not a competition itself.'
         },
         {
-          text: '6 I find classical / entertaining music really boring, and I prefer pop.',
+          text: 'I find classical / entertaining music really boring, and I prefer pop.',
           options: ['classical', 'entertaining'],
           correct: 'classical',
           explanation: 'The sentence states the music is "boring" and the preference is "pop". This sets up a contrast, and **classical** music is a distinct genre often contrasted with pop, fitting the context of finding it boring.'
@@ -95,49 +95,49 @@ export const exercises = [
       title: 'Phrasal verbs: D Choose the correct answer.',
       questions: [
         {
-          text: '1 You should take __________ a sport and then you would get more exercise.',
+          text: 'You should take __________ a sport and then you would get more exercise.',
           options: ['off', 'up', 'down'],
           correct: 'up',
           explanation: 'To \'**take up**\' a sport means to start it as a hobby or activity.'
         },
         {
-          text: '2 I\'m trying to work! Could you please turn your music __________ ?',
+          text: 'I\'m trying to work! Could you please turn your music __________ ?',
           options: ['down', 'in', 'out'],
           correct: 'down',
           explanation: 'To \'**turn down**\' music means to lower its volume.'
         },
         {
-          text: '3 Just ask and I\'m sure the other children will let you join __________ .',
+          text: 'Just ask and I\'m sure the other children will let you join __________ .',
           options: ['out', 'up', 'in'],
           correct: 'in',
           explanation: 'To \'**join in**\' means to participate or take part in an activity.'
         },
         {
-          text: '4 The referee sent David __________ for arguing with him.',
+          text: 'The referee sent David __________ for arguing with him.',
           options: ['off', 'down', 'up'],
           correct: 'off',
           explanation: 'To \'**send off**\' a player means to make them leave the game, typically due to a foul or rule violation.'
         },
         {
-          text: '5 This is my favourite song! Turn it __________ !',
+          text: 'This is my favourite song! Turn it __________ !',
           options: ['off', 'out', 'up'],
           correct: 'up',
           explanation: 'To \'**turn up**\' music means to increase its volume.'
         },
         {
-          text: '6 A mobile phone rang, but the musician just carried __________ playing.',
+          text: 'A mobile phone rang, but the musician just carried __________ playing.',
           options: ['on', 'up', 'in'],
           correct: 'on',
           explanation: 'To \'**carry on**\' means to continue doing something without stopping.'
         },
         {
-          text: '7 We can\'t afford to eat __________ very often.',
+          text: 'e can\'t afford to eat __________ very often.',
           options: ['off', 'up', 'out'],
           correct: 'out',
           explanation: 'To \'**eat out**\' means to eat at a restaurant instead of at home.'
         },
         {
-          text: '8 I\'ve decided to become a vegetarian and give __________ meat.',
+          text: 'I\'ve decided to become a vegetarian and give __________ meat.',
           options: ['up', 'off', 'out'],
           correct: 'up',
           explanation: 'To \'**give up**\' something means to stop doing or consuming it regularly, often implying quitting.'
@@ -150,32 +150,32 @@ export const exercises = [
       title: 'Prepositional phrases: E Write one word in each gap.',
       questions: [
         {
-          text: '1 We were waiting outside the stadium __________ a long time before they finally let us in.',
+          text: 'We were waiting outside the stadium __________ a long time before they finally let us in.',
           correct: 'for',
           explanation: 'The correct prepositional phrase is "**for** a long time," indicating duration.'
         },
         {
-          text: '2 I\'ve got that concert __________ DVD – it\'s fantastic!',
+          text: 'I\'ve got that concert __________ DVD – it\'s fantastic!',
           correct: 'on',
           explanation: 'The correct prepositional phrase is "**on** DVD," indicating the medium.'
         },
         {
-          text: '3 I ran all the way home and I was just __________ time for my favourite programme.',
+          text: 'I ran all the way home and I was just __________ time for my favourite programme.',
           correct: 'in',
           explanation: 'The correct prepositional phrase is "**in** time," meaning arriving before the deadline or event.'
         },
         {
-          text: '4 Everyone clapped when the singer came __________ stage.',
+          text: 'Everyone clapped when the singer came __________ stage.',
           correct: 'on',
           explanation: 'The correct prepositional phrase is "**on** stage," referring to the performance area.'
         },
         {
-          text: '5 At the cinema, Mum sat on the right, Dad sat on the left and I sat __________ the middle.',
+          text: 'At the cinema, Mum sat on the right, Dad sat on the left and I sat __________ the middle.',
           correct: 'in',
           explanation: 'The correct prepositional phrase is "**in** the middle," indicating a central position.'
         },
         {
-          text: '6 Ed doesn\'t want to become a professional footballer. He just does it __________ fun.',
+          text: 'Ed doesn\'t want to become a professional footballer. He just does it __________ fun.',
           correct: 'for',
           explanation: 'The correct prepositional phrase is "**for** fun," indicating the purpose or reason.'
         }
@@ -186,14 +186,14 @@ export const exercises = [
       type: 'word_formation',
       title: 'Word formation: F Complete by changing the form of the word in capitals when this is necessary.',
       questions: [
-        { baseWord: 'SING', text: '1 What\'s the name of that ____________ you were singing earlier?', correct: 'song', explanation: 'From the verb \'sing\', the noun \'**song**\' refers to the musical piece that was being sung.' },
-        { baseWord: 'MUSIC', text: '2 I started to learn the piano, but I don\'t think I\'ve got much ____________ talent, to be honest.', correct: 'musical', explanation: 'From the noun \'music\', the adjective \'**musical**\' describes talent related to music.' },
-        { baseWord: 'ATHLETE', text: '3 My dad used to be really fit and was on his college ____________ team.', correct: 'athletic', explanation: 'From the noun \'athlete\', the adjective \'**athletic**\' describes something related to athletes or competitive sports.' },
-        { baseWord: 'CHILD', text: '4 When you were young, did you ever play in the street with other local ____________ ?', correct: 'children', explanation: 'From the noun \'child\', the plural form \'**children**\' is required here to refer to multiple young people.' },
-        { baseWord: 'ACT', text: '5 Alan is studying to be an ____________ , but I don\'t think he\'s enjoying it.', correct: 'actor', explanation: 'From the verb \'act\', the noun \'**actor**\' refers to a person who performs in plays, films, or television shows.' },
-        { baseWord: 'COLLECT', text: '6 They have a wonderful ____________ of old toys at the museum in town.', correct: 'collection', explanation: 'From the verb \'collect\', the noun \'**collection**\' refers to a group of things gathered together, often for a purpose.' },
-        { baseWord: 'SAIL', text: '7 My grandad loves to ____________ and we often go out on his boat.', correct: 'sail', explanation: 'The base verb \'**sail**\' is correct here as it refers to the activity of traveling in a boat with sails. It follows "loves to" forming an infinitive.' },
-        { baseWord: 'MUSIC', text: '8 You have to practise a lot if you want to work as a ____________ .', correct: 'musician', explanation: 'From the noun \'music\', the noun \'**musician**\' refers to a person who plays or composes music professionally.' }
+        { baseWord: 'SING', text: 'What\'s the name of that ____________ you were singing earlier?', correct: 'song', explanation: 'From the verb \'sing\', the noun \'**song**\' refers to the musical piece that was being sung.' },
+        { baseWord: 'MUSIC', text: 'I started to learn the piano, but I don\'t think I\'ve got much ____________ talent, to be honest.', correct: 'musical', explanation: 'From the noun \'music\', the adjective \'**musical**\' describes talent related to music.' },
+        { baseWord: 'ATHLETE', text: 'My dad used to be really fit and was on his college ____________ team.', correct: 'athletic', explanation: 'From the noun \'athlete\', the adjective \'**athletic**\' describes something related to athletes or competitive sports.' },
+        { baseWord: 'CHILD', text: 'When you were young, did you ever play in the street with other local ____________ ?', correct: 'children', explanation: 'From the noun \'child\', the plural form \'**children**\' is required here to refer to multiple young people.' },
+        { baseWord: 'ACT', text: 'Alan is studying to be an ____________ , but I don\'t think he\'s enjoying it.', correct: 'actor', explanation: 'From the verb \'act\', the noun \'**actor**\' refers to a person who performs in plays, films, or television shows.' },
+        { baseWord: 'COLLECT', text: 'They have a wonderful ____________ of old toys at the museum in town.', correct: 'collection', explanation: 'From the verb \'collect\', the noun \'**collection**\' refers to a group of things gathered together, often for a purpose.' },
+        { baseWord: 'SAIL', text: 'My grandad loves to ____________ and we often go out on his boat.', correct: 'sail', explanation: 'The base verb \'**sail**\' is correct here as it refers to the activity of traveling in a boat with sails. It follows "loves to" forming an infinitive.' },
+        { baseWord: 'MUSIC', text: 'You have to practise a lot if you want to work as a ____________ .', correct: 'musician', explanation: 'From the noun \'music\', the noun \'**musician**\' refers to a person who plays or composes music professionally.' }
       ]
     },
     {
